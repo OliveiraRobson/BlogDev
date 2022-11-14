@@ -1,0 +1,14 @@
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Model\bin\Debug\net6.0\BlogDev.Model.deps.json
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Model\bin\Debug\net6.0\BlogDev.Model.runtimeconfig.json
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Model\bin\Debug\net6.0\BlogDev.Model.dll
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Model\bin\Debug\net6.0\BlogDev.Model.pdb
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Model\obj\Debug\net6.0\BlogDev.Model.csproj.AssemblyReference.cache
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Model\obj\Debug\net6.0\BlogDev.Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Model\obj\Debug\net6.0\BlogDev.Model.AssemblyInfoInputs.cache
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Model\obj\Debug\net6.0\BlogDev.Model.AssemblyInfo.cs
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Model\obj\Debug\net6.0\BlogDev.Model.csproj.CoreCompileInputs.cache
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Model\obj\Debug\net6.0\BlogDev.Model.dll
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Model\obj\Debug\net6.0\refint\BlogDev.Model.dll
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Model\obj\Debug\net6.0\BlogDev.Model.pdb
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Model\obj\Debug\net6.0\BlogDev.Model.genruntimeconfig.cache
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Model\obj\Debug\net6.0\ref\BlogDev.Model.dll

@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "BlogDev.Service": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:55469;http://localhost:55470"
+    }
+  }
+}
