@@ -47,6 +47,23 @@
  */
 import 'zone.js';  // Included with Angular CLI.
 import 'bootstrap/dist/js/bootstrap.min.js';
+// import '../src/Shared/css/assets/js/script.js';
+// import '../src/Shared/css/assets/plugins/jquery-3.5.1.min.js';
+// import '../src/Shared/css/assets/plugins/menu.min.js';
+// import '../src/Shared/css/assets/plugins/parallax.js';
+// import '../src/Shared/css/assets/plugins/select2.min.js';
+// import '../src/Shared/css/assets/plugins/swiper-bundle.min.js';
+// import '../src/Shared/css/assets/plugins/venobox.min.js';
+// import '../src/Shared/css/assets/plugins/jquery.magnific-popup.min.js';
+// import '../src/Shared/css/assets/plugins/wavesurfer.js';
+// import '../src/Shared/css/assets/plugins/packery.pkgd.min.js';
+// import '../src/Shared/css/assets/plugins/jquery-ui.min.js';
+// import '../src/Shared/css/assets/';
+
+
+
+
+
 
 /***************************************************************************************************
  * APPLICATION IMPORTS

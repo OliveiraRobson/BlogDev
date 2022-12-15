@@ -14,13 +14,13 @@ import { Component, Input, NgModule, OnInit ,HostListener} from '@angular/core';
 
 export class ListaDePostsComponent  {
  
-
-
+  
   public Categories: Array<any> = [
     { Title: "Jiu mudou vidas", PublishedOn: false , Description :""},
     { Title: "Academia mudou vidas", PublishedOn: false , Description :""},
     { Title: "O poder do dinheiro", PublishedOn: false, Description :""},
     { Title: "O poder do dinheiro", PublishedOn: false, Description :""},
+   
 
     // { title: "Strawberry", color: "Red" }
   ];
@@ -31,6 +31,11 @@ export class ListaDePostsComponent  {
     { id: 3, Title: "Green" },
     { id: 3, Title: "Red" }
   ];
+
+  // callPost(){
+      
+  // };  
+
   
 }
  

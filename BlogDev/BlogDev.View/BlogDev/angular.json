@@ -90,7 +90,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/Shared/css/assets/css/all.min.css",
+              "src/Shared/css/assets/css/bootstrap.min.css",
+              "src/Shared/css/assets/css/jquery-ui.min.css",
+              "src/Shared/css/assets/css/magnific-popup.css",
+              "src/Shared/css/assets/css/menu.css",
+              "src/Shared/css/assets/css/nouislider.css",
+              "src/Shared/css/assets/css/nouislider.min.css",
+              "src/Shared/css/assets/css/responsive.css",
+              "src/Shared/css/assets/css/select2.min.css",
+              "src/Shared/css/assets/css/style.css",
+              "src/Shared/css/assets/css/swiper-bundle.min.css",
+              "src/Shared/css/assets/css/venobox.css"
+        
             ],
             "scripts": []
           }
