@@ -17,7 +17,7 @@ namespace DataBase
         public void Setup()
         {
             var services = new ServiceCollection();
-            services.AddDbContext<BlogDevContext>(options => options.UseSqlServer("Server=DESKTOP-P3VTNSP;Database=BlogDev;Trusted_Connection=True;MultipleActiveResultSets=true"));
+            services.AddDbContext<BlogDevContext>(options => options.UseSqlServer("Server=DESKTOP-E4RADFI;Database=BlogDev;integrated security=True;Encrypt=False"));
             services.AddTransient<IRepositoryWrapper, RepositoryWrapper>();
             //services.AddTransient<IBlogDevContextFactory, IBlogDevContextFactory>();
             services.AddTransient<IPostRepository, PostRepository> ();
@@ -38,6 +38,18 @@ namespace DataBase
 
 
             Assert.Pass();
+        }
+
+        [Test]
+        public void GetAllCategory()
+        {
+            var a = serviceProvider.GetService<IRepositoryWrapper>();
+
+            var b  = a.Category.getAllCategory().ToList();
+
+
+            Assert.Pass();
+
         }
     }
 }

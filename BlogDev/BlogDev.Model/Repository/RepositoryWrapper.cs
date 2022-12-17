@@ -12,6 +12,8 @@ namespace BlogDev.Model.Repository
     public class RepositoryWrapper : IRepositoryWrapper
     {
         private IPostRepository _postRepository;
+        private ICategoryRepository _categoryRepository;
+
         private BlogDevContext _context;
 
 
@@ -32,6 +34,18 @@ namespace BlogDev.Model.Repository
                 }
 
                 return _postRepository;
+            }
+        }
+        public ICategoryRepository Category
+        {
+            get
+            {
+                if (_categoryRepository == null)
+                {
+                    _categoryRepository = new CategoryRepository(_context);
+                }
+
+                return _categoryRepository;
             }
         }
 

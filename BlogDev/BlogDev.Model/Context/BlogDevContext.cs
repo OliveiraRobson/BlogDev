@@ -22,5 +22,12 @@ namespace BlogDev.Model.Context
         public Microsoft.EntityFrameworkCore.DbSet<Tag> Tags { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<PostTags> PostTags { get; set; }
         public Microsoft.EntityFrameworkCore.DbSet<Comment> Comments { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>().ToTable("Categories").HasKey(x => x.Id);
+            modelBuilder.Entity<Post>().ToTable("Posts").HasKey(x => x.Id);
+
+        }
     }
 }

@@ -9,5 +9,6 @@ namespace BlogDev.Model.Inferfaces
     public interface IRepositoryWrapper
     {
         public IPostRepository Post { get;}
+        public ICategoryRepository Category { get;}
     }
 }

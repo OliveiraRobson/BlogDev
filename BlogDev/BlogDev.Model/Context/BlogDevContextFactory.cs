@@ -15,7 +15,7 @@ namespace BlogDev.Model.Context
         {
             var dbContextBuilder = new DbContextOptionsBuilder<BlogDevContext>();
             var connectionString = "Data Source =DESKTOP-E4RADFI; Initial Catalog=BlogDev; Integrated Security = True";
-            dbContextBuilder.UseSqlServer("Server=DESKTOP-P3VTNSP;Database=BlogDev;Trusted_Connection=True;MultipleActiveResultSets=true");
+            dbContextBuilder.UseSqlServer("Server=DESKTOP-E4RADFI;Database=BlogDev;Trusted_Connection=True;MultipleActiveResultSets=true");
             return new BlogDevContext(dbContextBuilder.Options);
         }
     }
