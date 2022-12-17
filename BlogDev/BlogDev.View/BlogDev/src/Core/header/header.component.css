@@ -1,0 +1,11 @@
+#navbarCompleta
+{
+        BACKGROUND: black !important;
+        font-family: "Lucida Console", "Courier New", monospace;
+}
+ .navbar-brand a{
+    background: white;
+ }
+a:hover{
+    background-color: red;
+}

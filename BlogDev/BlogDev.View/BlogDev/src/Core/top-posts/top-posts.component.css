@@ -1,0 +1,13 @@
+.topspace{
+    padding: calc( var(--post-margin) * 1) 0 0 0;
+}
+#carouselExampleIndicators{
+    height: min-content;
+    
+}
+
+.carousel-item  img {
+    max-height: 440px;
+    min-width: auto;
+    
+  }
