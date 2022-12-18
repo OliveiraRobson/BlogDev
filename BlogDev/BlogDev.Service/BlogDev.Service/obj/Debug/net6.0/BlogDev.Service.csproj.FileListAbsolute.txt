@@ -1,0 +1,17 @@
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\bin\Debug\net6.0\BlogDev.Service.deps.json
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\bin\Debug\net6.0\BlogDev.Service.runtimeconfig.json
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\bin\Debug\net6.0\BlogDev.Service.dll
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\bin\Debug\net6.0\BlogDev.Service.pdb
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\bin\Debug\net6.0\BlogDev.Model.dll
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\bin\Debug\net6.0\BlogDev.Model.pdb
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\obj\Debug\net6.0\BlogDev.Service.csproj.AssemblyReference.cache
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\obj\Debug\net6.0\BlogDev.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\obj\Debug\net6.0\BlogDev.Service.AssemblyInfoInputs.cache
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\obj\Debug\net6.0\BlogDev.Service.AssemblyInfo.cs
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\obj\Debug\net6.0\BlogDev.Service.csproj.CoreCompileInputs.cache
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\obj\Debug\net6.0\BlogDev.Service.csproj.CopyComplete
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\obj\Debug\net6.0\BlogDev.Service.dll
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\obj\Debug\net6.0\refint\BlogDev.Service.dll
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\obj\Debug\net6.0\BlogDev.Service.pdb
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\obj\Debug\net6.0\BlogDev.Service.genruntimeconfig.cache
+C:\Users\Olive\source\repos\OliveiraRobson\BlogDev\BlogDev\BlogDev.Service\BlogDev.Service\obj\Debug\net6.0\ref\BlogDev.Service.dll

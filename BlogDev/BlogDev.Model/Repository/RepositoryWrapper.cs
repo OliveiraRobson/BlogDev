@@ -1,11 +1,5 @@
 ﻿using BlogDev.Model.Context;
 using BlogDev.Model.Inferfaces;
-using BlogDev.Model.Tables;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlogDev.Model.Repository
 {
@@ -13,7 +7,6 @@ namespace BlogDev.Model.Repository
     {
         private IPostRepository _postRepository;
         private ICategoryRepository _categoryRepository;
-
         private BlogDevContext _context;
 
 
