@@ -1,0 +1,32 @@
+.article-carousel {
+    max-width: 100%;
+    margin: 2rem 0;
+  }
+  
+  .article-cardcarousel {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .article-cardcarousel img {
+    max-width: 30%;
+    margin: 0 auto;
+  }
+  
+  .slick-center .article-cardcarousel img {
+    max-width: 50%;
+  }
+  
+  .slick-dots {
+    bottom: -30px;
+  }
+  
+  .slick-dots li button:before {
+    font-size: 12px;
+    color: #333;
+  }
+  
+  .slick-dots li.slick-active button:before {
+    color: #007bff;
+  }
+  

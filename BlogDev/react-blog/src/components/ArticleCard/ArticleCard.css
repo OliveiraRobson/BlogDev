@@ -1,0 +1,65 @@
+
+.article{
+  display: flex;
+  flex-flow: row wrap;
+}
+.article-card {
+
+
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem;
+
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .article-image {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .article-title {
+    margin-top: 0.5rem;
+    font-size: 1.25rem;
+  }
+  
+  .article-description {
+    color: #555;
+  }
+  
+  .article-date {
+    color: #999;
+    font-size: 0.8rem;
+  }
+
+
+   @media (min-width: 768px) {
+    .app {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    /* A partir de 768px (resoluções de tablet e computador) */
+    .article-card {
+      max-width: calc(25% - 2rem);
+   
+    }
+    
+    .article-card:nth-child(4n) {
+      margin-right: 0;
+    }
+  } 
+  @media (max-width: 767px) {
+    /* Estilo para dispositivos móveis */
+    
+      
+    .article-card {
+      float: none; /* Remove o float para dispositivos móveis */
+    }
+  }
+
