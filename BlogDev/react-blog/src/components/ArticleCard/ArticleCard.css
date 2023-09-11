@@ -21,6 +21,8 @@
     max-height: 150px;
     object-fit: cover;
     border-radius: 4px;
+    position: relative;
+    top: -29px;
   }
   
   .article-title {
@@ -58,8 +60,9 @@
     /* Estilo para dispositivos móveis */
     
       
-    .article-card {
-      float: none; /* Remove o float para dispositivos móveis */
+    .article {
+      margin-left: 95px;
+      /* Remove o float para dispositivos móveis */
     }
   }
 

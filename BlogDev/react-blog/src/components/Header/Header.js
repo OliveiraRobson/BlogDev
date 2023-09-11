@@ -16,7 +16,7 @@ const Header = () => {
     return (
       <header className="header">
         <div className="logo">
-          <h1>Blog Robson</h1>
+          <h1>BRS</h1>
         </div>
         <nav className={`menu ${menuOpen ? 'open' : ''}`}>
           <ul>

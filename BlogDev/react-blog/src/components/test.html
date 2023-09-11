@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>BILE</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <canvas id="myCanvas"></canvas>
+
+    <script>
+        const canvas = document.getElementById("myCanvas");
+        const ctx = canvas.getContext("2d");
+        let particles = [];
+
+        // PARTICLE CLASS! <----- 
+        class Particle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.radius = 5; // Initial size of the particle
+                this.life = 3; // Lifespan of the particle (3 frames)
+                this.life = Math.random() * 100 + 50; // Adjust lifespan for liquid particles
+
+
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+                ctx.fillStyle = "orange"; // Bright orange color for flash
+                ctx.fill();
+                ctx.closePath();
+            }
+
+            update() {
+                this.x += this.velocityX;
+                this.y += this.velocityY;
+                this.life -= 1; // Decrease lifespan
+
+                const platformHeight = 100;
+                if (this.y + this.radius > canvas.height - platformHeight) {
+                    this.y = canvas.height - platformHeight - this.radius;
+                    this.velocityY = -Math.abs(this.velocityY) / 2; // Reflect off the platform
+                } else {
+                    this.velocityY += GRAVITY; // Apply gravity to the particle
+                }
+
+                this.draw();
+            }
+
+            reset(x, y) {
+                this.x = x;
+                this.y = y;
+                this.active = true;
+
+            }
+
+
+            spawnParticle();
+
+        }     
+
+        class FireParticle extends Particle {
+            constructor(x, y, radius, color, velocityX, velocityY) {
+                super(x, y);
+                this.radius = radius; // Override the radius
+                this.color = color; // Add color property
+                this.velocityX = velocityX;
+                this.velocityY = velocityY;
+                this.life = Math.random() * 350 + 100;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+                ctx.fillStyle = this.color; // Use the color passed in the constructor
+                ctx.fill();
+                ctx.closePath();
+            }
+
+
+            update() {
+                this.x += this.velocityX;
+                this.y += this.velocityY;
+                this.life -= 16;
+
+                const platformHeight = 100;
+                if (this.y + this.radius > canvas.height - platformHeight) {
+                    this.y = canvas.height - platformHeight - this.radius;
+                    this.velocityY = -Math.abs(this.velocityY) / 2; // Reflect off the platform
+                } else {
+                    this.velocityY += GRAVITY;
+                }
+                this.draw();
+            }
+
+
+        }
+
+        function spawnParticle() {
+
+            // Check for pooled particles
+            for (let i = 0; i < particles.length; i++) {
+                if (!particles[i].active) {
+                    particles[i].reset(x, y);
+                    return;
+                }
+            }
+
+            // If none found, create new 
+            const p = new Particle(x, y);
+            particles.push(p);
+
+
+            class Player {
+                constructor(x, y, width, height, color) {
+                    this.x = x;
+                    this.y = y;
+                    this.width = width;
+                    this.height = height;
+                    this.color = color;
+                    this.velocityX = 0; // Horizontal velocity for movement
+                    this.velocityY = 0; // Vertical velocity for jumping
+                    this.isJumping = false; // Indicates if the player is jumping
+                    this.isDodging = false; // Indicates if the player is dodging
+                    this.dodgeDuration = 0; // Remaining frames of dodge duration
+                    this.originalHeight = height; // Original height of the player
+                }
+
+                takeDamage() {
+
+                    // Apply damage or other effects here
+                    console.log("Player hit!"); // Log message for testing
+                }
+
+                draw() {
+                    ctx.fillStyle = this.color;
+                    if (this.isDodging) {
+                        ctx.fillRect(this.x, this.y + this.height / 2, this.width, this.height / 2);
+                    } else {
+                        ctx.fillRect(this.x, this.y, this.width, this.height);
+                    }
+                }
+
+                update() {
+                    this.x += this.velocityX; // Apply horizontal velocity
+                    this.y += this.velocityY; // Apply vertical velocity
+
+                    // Check if the player is on the platform
+                    const platformHeight = 100;
+                    if (this.y + this.height > canvas.height - platformHeight) {
+                        this.y = canvas.height - platformHeight - this.height;
+                        this.velocityY = 0;
+                        this.isJumping = false;
+                    } else {
+                        this.velocityY += GRAVITY; // Apply gravity
+                    }
+
+                    if (this.isDodging) {
+                        this.dodgeDuration--;
+
+                        if (this.dodgeDuration <= 0) {
+                            this.isDodging = false;
+                            this.height = this.originalHeight;
+                        }
+
+                        if (this.x < 0) this.x = 0;
+                        if (this.x + this.width > canvas.width) this.x = canvas.width - this.width;
+                    }
+
+                    this.draw();
+                }
+
+                moveLeft() {
+                    this.velocityX = -5; // Adjust the movement speed as needed
+                }
+
+                moveRight() {
+                    this.velocityX = 5; // Adjust the movement speed as needed
+                }
+
+                stopX() {
+                    this.velocityX = 0; // Stop horizontal movement
+                }
+
+                jump() {
+                    if (!this.isJumping) {
+                        this.velocityY = JUMP_FORCE;
+                        this.isJumping = true;
+                    }
+                }
+
+                duck() {
+                    if (!this.isJumping && !this.isDodging) {
+                        this.isDodging = true;
+                        this.dodgeDuration = DODGE_DURATION;
+                        this.height = this.originalHeight / 2;
+                    }
+                }
+
+                puke() {
+                    for (let i = 0; i < INITIAL_FIRE_PARTICLE_COUNT; i++) {
+                        const greenShade = Math.floor(Math.random() * 256); // Generate a random shade of green
+                        const color = `rgb(0, ${greenShade}, 0)`; // Create an RGB color using the random green shade
+
+                        const particle = new FireParticle(
+                            this.x + this.width, // Starting x position
+                            this.y + this.height / 2, // Starting y position
+                            Math.random() * 5 + 2, // Radius
+                            color, // Color
+                            Math.random() * 7 + 7, // Horizontal velocity
+                            Math.random() * 5 - 6 // Vertical velocity
+                        );
+                        particles.push(particle);
+                    }
+
+
+                }
+
+            }
+
+
+            // Constants
+            const GRAVITY = 0.5;
+            const JUMP_FORCE = -10;
+            const DODGE_DURATION = 35;
+            const INITIAL_FIRE_PARTICLE_COUNT = 17;
+
+
+            // Adjust canvas dimensions
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+
+            // Adjust player starting position
+            const initialPlayerX = canvas.width / 4 - 25;
+            const initialPlayerY = canvas.height - 150;
+
+
+            // Draw baby blue sky
+            function drawSky() {
+                ctx.fillStyle = "lightblue";
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+            }
+
+
+            // Draw solid black platform
+            function drawPlatform() {
+                const platformHeight = 100;
+                ctx.fillStyle = "black";
+                ctx.fillRect(0, canvas.height - platformHeight, canvas.width, platformHeight);
+            }
+
+
+            // spawnParticles function
+            function spawnParticles(x, y) {
+
+            }
+
+            // Pool particles, cap total 
+
+            for (let i = 0; i < 10; i++) {
+                const p = particles[particles.length - 1];
+                // Reuse particle or create new one
+            }
+
+            class Civilian {
+                constructor(x, y, width, height) {
+                    this.x = x;
+                    this.y = y;
+                    this.width = width;
+                    this.height = height;
+                    this.pukeCoverage = 0; // How much puke is covering the civilian
+                }
+
+                draw() {
+                    ctx.fillStyle = this.pukeCoverage < 100 ? "brown" : "green";
+                    ctx.fillRect(this.x, this.y, this.width, this.height);
+                }
+
+                // Replace the civilian with liquid particles
+                melt() {
+                    for (let i = 0; i < 100; i++) { // Number of liquid particles
+                        const particle = new Particle(this.x + Math.random() * this.width,
+                            this.y + Math.random() * this.height,
+                            5, "green"); // Liquid color
+                        particles.push(particle);
+                    }
+                    civilians.splice(civilians.indexOf(this), 1); // Remove this civilian
+                }
+            }
+            const civilians = [];
+            civilians.push(new Civilian(300, initialPlayerY, 50, 50)); // Example of adding a civilian
+
+            const particles = [];
+            const projectiles = [];
+
+            function drawCivilians() {
+                civilians.forEach(civilian => civilian.draw());
+            }
+
+            // Define player object
+            const player = new Player(initialPlayerX, initialPlayerY, 50, 50, "blue");
+
+            // Add Event Listeners for controls
+            window.addEventListener("keydown", (event) => {
+                if (event.key === "a") player.moveLeft();
+                if (event.key === "d") player.moveRight();
+                if (event.key === "w") player.jump();
+                if (event.key === "s") player.duck();
+                if (event.key === "k") player.puke(); // Puke on pressing 'p'
+            });
+
+            window.addEventListener("keyup", (event) => {
+                if (event.key === "a" || event.key === "d") player.stopX();
+            });
+
+            class Police {
+                constructor(x, y, width, height) {
+                    this.x = x;
+                    this.y = y;
+                    this.width = width;
+                    this.height = height;
+                    this.color = "red";
+                    this.pukeCoverage = 0; // How much puke is covering the police officer
+                    this.canShoot = true; // Determines if the police officer can shoot
+                }
+
+                checkPlayerInRange(player, range) {
+                    const dx = player.x - this.x;
+                    const dy = player.y - this.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    return distance <= range;
+                }
+
+                draw() {
+
+                    ctx.fillRect(this.x, this.y, this.width, this.height);
+                }
+
+                shootProjectile(player) {
+                    if (this.canShoot) {
+                        const dx = (player.x + player.width / 2) - this.x;
+                        const dy = (player.y + player.height / 2) - this.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        const velocityX = dx / distance * 5; // You can adjust the speed
+                        const velocityY = dy / distance * 5; // You can adjust the speed
+
+                        const projectile = new Projectile(this.x, this.y, 5, velocityX, velocityY); // You can adjust the size
+                        projectiles.push(projectile); // Add the projectile to the projectiles array
+
+                        this.canShoot = false; // Prevent further shooting
+
+                        setTimeout(() => { this.canShoot = true; }, 1000); // Allow shooting again after 1 second
+                    }
+                }
+                // Increase puke coverage and check if melting is needed
+                coverWithPuke() {
+                    this.pukeCoverage += 10;
+                    if (this.pukeCoverage >= 100) {
+                        this.melt();
+                        this.kill(); // Kill the police officer
+                    }
+                }
+
+                // Replace the police officer with liquid particles
+                melt() {
+                    for (let i = 0; i < 100; i++) { // Number of liquid particles
+                        const particle = new Particle(
+                            this.x + Math.random() * this.width,
+                            this.y + Math.random() * this.height
+                        );
+                        particle.velocityX = Math.random() * 4 - 2; // Horizontal velocity
+                        particle.velocityY = Math.random() * 2 - 1; // Vertical velocity
+                        particles.push(particle);
+                    }
+                }
+
+                // Kill the police officer, removing all functionality
+                kill() {
+
+                    // Replace the police instance with a dummy object
+                    Object.assign(this, {
+                        draw: () => { },
+                        update: () => { },
+                        shootProjectile: () => { },
+                        muzzleFlash: () => { },
+                        checkPukeCollision: () => { },
+                    });
+                }
+
+                checkPukeCollision(particles) {
+                    particles.forEach(particle => {
+                        if (particle instanceof FireParticle &&
+                            particle.x > this.x && particle.x < this.x + this.width &&
+                            particle.y > this.y && particle.y < this.y + this.height) {
+                            this.coverWithPuke();
+                        }
+                    });
+                }
+
+                reload() {
+                    this.reloadTime = 120;
+                    this.shotsFired = 0;
+                }
+
+            }
+
+            class Projectile {
+                constructor(x, y, radius, velocityX, velocityY) {
+                    this.x = x;
+                    this.y = y;
+                    this.radius = radius;
+                    this.velocityX = velocityX;
+                    this.velocityY = velocityY;
+
+                }
+                checkCollisionWithPlayer(player) {
+                    const dx = this.x - (player.x + player.width / 2);
+                    const dy = this.y - (player.y + player.height / 2);
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+
+                    // Check if the distance is less than the sum of the radii (collision detected)
+                    return distance < this.radius + player.width / 2;
+                }
+
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+                    ctx.fillStyle = "black";
+                    ctx.fill();
+                    ctx.closePath();
+                }
+
+                update() {
+                    this.x += this.velocityX;
+                    this.y += this.velocityY;
+                    this.draw();
+
+                    // Confine police to canvas
+                    if (this.x < 0) this.x = 0;
+                    if (this.x + this.width > canvas.width) this.x = canvas.width - this.width;
+                }
+            }
+
+            class AcidParticle {
+                constructor(x, y) {
+                    this.x = x;
+                    this.y = y;
+                    this.radius = Math.random() * 3 + 1; // Random size for variation
+                    this.velocityX = Math.random() * 4 - 2; // Horizontal velocity
+                    this.velocityY = Math.random() * 4 - 2; // Vertical velocity
+                    this.life = Math.random() * 20 + 10; // Lifespan of the particle
+                }
+
+
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+                    ctx.fillStyle = "yellow"; // Sizzling color
+                    ctx.fill();
+                    ctx.closePath();
+                }
+
+                update() {
+                    this.x += this.velocityX;
+                    this.y += this.velocityY;
+                    this.life -= 1; // Decrease lifespan
+
+                    // Draw only if the particle is still "alive"
+                    if (this.life > 0) {
+                        this.draw();
+                    }
+                }
+            }
+
+            const police = new Police(canvas.width - 100, initialPlayerY, 50, 50);
+
+            // Add this right after the above line
+            const policeArray = [];
+            policeArray.push(new Police(canvas.width - 100, initialPlayerY, 50, 50)); // Right side
+            policeArray.push(new Police(canvas.width / 2 - 25, initialPlayerY, 50, 50)); // Middle
+            policeArray.push(new Police(100, initialPlayerY, 50, 50)); // Left side
+
+            
+            // Main game loop
+            function animate() 
+            {
+                requestAnimationFrame(animate);
+
+
+                // Clear the canvas
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+                // Draw Sky and Platform
+                drawSky();
+                drawPlatform();
+
+                spawnParticles(player.x, player.y);
+
+                // Update all particles
+                particles.forEach(p => {
+                    p.update();
+                });
+
+                // Draw and update civilians
+                drawCivilians();
+
+                // Draw and Update Police
+                policeArray.forEach(police => {
+                    police.draw();
+                    police.checkPukeCollision(particles);
+                    if (police.checkPlayerInRange(player, 500)) {
+                        police.shootProjectile(player);
+                    }
+                });
+
+                // Update & draw particles
+                particles.forEach((particle, index) => {
+                    particle.update();
+                    if (particle.life <= 0) {
+                        particles.splice(index, 1); // Remove dead particles
+                    }
+                });
+
+                police.checkPukeCollision(particles);
+
+                // Update & draw player
+                player.update();
+
+                // Handle projectiles
+                projectiles.forEach((projectile, index) => {
+                    projectile.update();
+                    if (projectile.checkCollisionWithPlayer(player)) {
+                        player.takeDamage(); // Apply collision effects
+                        projectiles.splice(index, 1); // Remove the projectile
+                    }
+                });
+
+                if (police.reloadTime > 0) {
+                    police.reloadTime--;
+                }
+                // Interaction with police (shooting if in range)
+                if (police.checkPlayerInRange(player, 500)) {
+                    police.shootProjectile(player);
+                }
+
+                particles.forEach(particle => {
+                    // Update each particle
+                });
+
+            }
+        }
+        animate();
+    </script>
+</body>
+
+</html>
+

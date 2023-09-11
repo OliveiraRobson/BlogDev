@@ -6,7 +6,7 @@ import Header from './components/Header/Header';
 import ArticleCard from './components/ArticleCard/ArticleCard';
 import Pagination from './components/Pagination/Pagination';
 import ArticleCarousel from './components/ArticleCarousel/ArticleCarousel';
-
+import Footer from './components/Footer/Footer';
 function App() {
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 4; // Substitua pelo número total de páginas
@@ -58,7 +58,7 @@ function App() {
           onPageChange={handlePageChange}
         />
       </div>
-      
+      <Footer />
     </div>
   );
 }
