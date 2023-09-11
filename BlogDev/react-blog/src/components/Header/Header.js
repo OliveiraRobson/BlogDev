@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Header.css';
+
 // ... (código anterior)
 
 const Header = () => {
@@ -20,7 +21,7 @@ const Header = () => {
         </div>
         <nav className={`menu ${menuOpen ? 'open' : ''}`}>
           <ul>
-            <li><a href="#" onClick={closeMenu}>Home</a></li>
+            <li><a href="/artigos" onClick={closeMenu}>Home</a></li>
             <li><a href="#" onClick={closeMenu}>Produtos</a></li>
             <li><a href="#" onClick={closeMenu}>Contato</a></li>
             <li><a href="#" onClick={closeMenu}>Login</a></li>
