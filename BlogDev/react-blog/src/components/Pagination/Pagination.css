@@ -1,44 +1,41 @@
-.pagination {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 1rem;
-    
-  }
-  
-  .pagination-button {
-    padding: 0.5rem 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    cursor: pointer;
-  }
-  
-  .page-list {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .page-number {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 0.25rem;
-    background-color: #fff;
-    cursor: pointer;
-  }
-  
-  .page-number.active {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  @media (max-width: 767px) {
-    .pagination {
-      /* flex-direction: column; */
-      align-items: center;
-    }
-  }
-  
+.pagination-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px; /* Espaçamento entre botões */
+  padding: 20px 0;
+  font-size: 1rem; /* Ajustando o tamanho da fonte */
+}
+
+.pagination-button, .page-number {
+  background-color: #e0e0e0; /* Cinza claro */
+  border: 2px solid transparent; /* Preparando para efeito hover/focus */
+  color: #555; /* Cor do texto */
+  padding: 10px 15px; /* Espaçamento interno um pouco maior */
+  cursor: pointer;
+  transition: all 0.3s; /* Suaviza todas as transições */
+  border-radius: 30px; /* Bordas arredondadas */
+  font-weight: 600; /* Fonte mais pesada */
+  outline: none; /* Remove o contorno padrão de foco */
+}
+
+.page-number.active {
+  background-color: #007BFF;  /* Cor azul para a página ativa */
+  color: #fff; /* Texto branco para a página ativa */
+  border-color: #007BFF; /* Cor da borda para a página ativa */
+}
+
+.pagination-button:hover, .page-number:hover {
+  background-color: #d1d1d1; /* Efeito hover cinza um pouco mais escuro */
+  border-color: #007BFF; /* Cor da borda azul ao pairar */
+}
+
+.page-number.active:hover {
+  background-color: #0056b3; /* Efeito hover azul mais escuro para a página ativa */
+}
+
+/* Efeito focus para acessibilidade */
+.pagination-button:focus, .page-number:focus {
+  border-color: #007BFF; /* Cor da borda azul ao focar */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Brilho ao redor do botão */
+}

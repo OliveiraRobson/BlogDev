@@ -1,33 +1,41 @@
 ﻿using BlogDev.Model.Tables;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Design;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlogDev.Model.Context
 {
-    public class BlogDevContext : Microsoft.EntityFrameworkCore.DbContext
+    public class BlogDevContext : DbContext
     {
         public BlogDevContext(DbContextOptions options) : base(options)
         {
            
         }
-        public Microsoft.EntityFrameworkCore.DbSet<Post> Posts { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Category> Categories { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<PostCategories> PostCategories { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Tag> Tags { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<PostTags> PostTags { get; set; }
-        public Microsoft.EntityFrameworkCore.DbSet<Comment> Comments { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Post> Post { get; set; }
+        public DbSet<Tag> Tags { get; set; }
+        public DbSet<PostTag> PostTags { get; set; }
+        public DbSet<Comentario> Comentarios { get; set; }
+        public DbSet<LikePost> LikesPosts { get; set; }
+        public DbSet<Compartilhamento> Compartilhamentos { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Category>().ToTable("Categories").HasKey(x => x.Id);
-            modelBuilder.Entity<Post>().ToTable("Posts").HasKey(x => x.Id);
+            modelBuilder.Entity<PostTag>()
+            .HasKey(pt => new { pt.PostID, pt.TagID });
 
+            modelBuilder.Entity<PostTag>()
+                .HasOne(pt => pt.Post)
+                .WithMany(p => p.PostTags)
+                .HasForeignKey(pt => pt.PostID);
+
+            modelBuilder.Entity<PostTag>()
+                .HasOne(pt => pt.Tag)
+                .WithMany(t => t.PostTags)
+                .HasForeignKey(pt => pt.TagID);
         }
+
     }
 }

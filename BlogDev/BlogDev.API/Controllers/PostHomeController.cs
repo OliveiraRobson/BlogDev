@@ -1,8 +1,9 @@
 ﻿using BlogDev.Model.Tables;
-using BlogDev.Service.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel;
+using BlogDev.Model.Context;
+using System.Data.Entity;
 
 namespace BlogDev.API.Controllers
 {
@@ -10,25 +11,19 @@ namespace BlogDev.API.Controllers
     [ApiController]
     public class PostHomeController : ControllerBase
     {
-        private readonly IFindCategoryPostService _filter;
+       
+        private readonly BlogDevContext _context;
 
-        public PostHomeController(IFindCategoryPostService filter)
+        public PostHomeController(BlogDevContext context)
         {
-            _filter = filter;
-           
+            _context = context;
         }
-        [HttpGet(Name = "GetCategoryPost")]
-        [Route("/[controller]/[action]")]
-        public List<Category> AllPostCategory()
+
+        [HttpGet]
+        public  IEnumerable<Post> GetPosts()
         {
-            var a =  this._filter.getAllCategories();
-            return a.ToList();
+            return  _context.Posts.ToList();
         }
-        //[HttpGet(Name = "GetCategoryPostById")]
-        //public IEnumerable<Category> PostCategorybyId()
-        //{
-        //    return null;
-        //}
     }
     
 }

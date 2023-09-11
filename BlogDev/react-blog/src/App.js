@@ -2,20 +2,21 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState } from 'react';
 
+
+import SocialBar from './components/SocialBar/SocialBar';
+import PostDetail from './components/PostDetail/PostDetail';
 import Header from './components/Header/Header';
 import ArticleCard from './components/ArticleCard/ArticleCard';
 import Pagination from './components/Pagination/Pagination';
 import ArticleCarousel from './components/ArticleCarousel/ArticleCarousel';
 import Footer from './components/Footer/Footer';
 function App() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 4; // Substitua pelo número total de páginas
-
-  const handlePageChange = (pageNumber) => {
-    if (pageNumber >= 1 && pageNumber <= totalPages) {
-      setCurrentPage(pageNumber);
-    }
-  };
+ 
+  // const handlePageChange = (pageNumber) => {
+  //   if (pageNumber >= 1 && pageNumber <= totalPages) {
+  //     setCurrentPage(pageNumber);
+  //   }
+  // };
   const articlescor = [
     {
       title: 'Artigo 1',
@@ -38,26 +39,33 @@ function App() {
     },
     // Adicione mais artigos aqui
   ];
+  const fakePost = {
+    title: "O Futuro da Programação",
+    date: "10 de setembro de 2023",
+    dateISO: "2023-09-10",
+    image: "https://fakeimageurl.com/sample.jpg",
+    imageCaption: "Ilustração do futuro da programação",
+    introduction: "O mundo da programação está sempre em constante evolução...",
+    evolution: "Desde os primeiros computadores até as mais recentes inovações em inteligência artificial...",
+    languages: [
+      {name: "Python", link: "#", description: "..."},
+      {name: "Rust", link: "#", description: "..."},
+      {name: "Go", link: "#", description: "..."},
+    ],
+    conclusion: "A programação continuará a desempenhar um papel fundamental na definição do nosso futuro..."
+  }
+
   return (
     <div className="App">
      <Header />
      {/* <ArticleCarousel articles={articlescor} /> */}
-     {articles.map((article, index) => (
+
         <ArticleCard
-          key={index}
-          title={article.title}
-          image={article.image}
-          description={article.description}
-          date={article.date}
+         
         />
-      ))}
-      <div>
-        <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={handlePageChange}
-        />
-      </div>
+<SocialBar />
+    {/* <PostDetail post={fakePost} /> */}
+     
       <Footer />
     </div>
   );

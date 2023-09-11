@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace BlogDev.Model.Tables
 {
-    public class Tag : BaseEntity
+    public class Tag
     {
-        public string Title { get; set; }
-        public string Description { get; set; }
-        public string Slug { get; set; }
-        public List<PostTags> PostTags { get; set; }
+        public int TagID { get; set; }
+        public string Nome { get; set; }
+        public List<PostTag> PostTags { get; set; }
     }
 }

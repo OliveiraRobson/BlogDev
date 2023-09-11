@@ -1,6 +1,5 @@
 using BlogDev.Model.Context;
-using BlogDev.Model.Inferfaces;
-using BlogDev.Model.Repository;
+
 using BlogDev.Model.Tables;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,9 +17,9 @@ namespace DataBase
         {
             var services = new ServiceCollection();
             services.AddDbContext<BlogDevContext>(options => options.UseSqlServer("Server=DESKTOP-E4RADFI;Database=BlogDev;integrated security=True;Encrypt=False"));
-            services.AddTransient<IRepositoryWrapper, RepositoryWrapper>();
-            //services.AddTransient<IBlogDevContextFactory, IBlogDevContextFactory>();
-            services.AddTransient<IPostRepository, PostRepository> ();
+            // services.AddTransient<IRepositoryWrapper, RepositoryWrapper>();
+            // //services.AddTransient<IBlogDevContextFactory, IBlogDevContextFactory>();
+            // services.AddTransient<IPostRepository, PostRepository> ();
 
             serviceProvider = services.BuildServiceProvider();
 
@@ -30,11 +29,11 @@ namespace DataBase
         public void ConectionWithDataBase()
          {
 
-            var b = serviceProvider.GetService<IRepositoryWrapper>();
+        //     var b = serviceProvider.GetService<IRepositoryWrapper>();
 
      
 
-           var a = b.Post.GetAllUsers();
+        //    var a = b.Post.GetAllUsers();
 
 
             Assert.Pass();
@@ -43,9 +42,9 @@ namespace DataBase
         [Test]
         public void GetAllCategory()
         {
-            var a = serviceProvider.GetService<IRepositoryWrapper>();
+            // var a = serviceProvider.GetService<IRepositoryWrapper>();
 
-            var b  = a.Category.getAllCategory().ToList();
+            // var b  = a.Category.getAllCategory().ToList();
 
 
             Assert.Pass();

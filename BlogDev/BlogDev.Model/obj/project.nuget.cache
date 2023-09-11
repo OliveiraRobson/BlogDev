@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2L7HbRPpqE8oaMwlKodYOrq29EmkkTxhw3yOoTLe0MNPsXSnKaCpw+CYumB+I9uCZFtzqh+LZYMPR9TqtINUAw==",
+  "dgSpecHash": "DVSQ6b4qNNAmXJA9uyLbdG46c6AZzyegHWLhFnd550oPqnL3G+sWk3yGNMMF5aMqpjskSz5bLTUvkBsNYX3jYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj",
+  "projectFilePath": "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Olive\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Olive\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

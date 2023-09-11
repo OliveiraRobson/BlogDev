@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.API\\BlogDev.API.csproj": {}
+    "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.API\\BlogDev.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.API\\BlogDev.API.csproj": {
+    "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.API\\BlogDev.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.API\\BlogDev.API.csproj",
+        "projectUniqueName": "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.API\\BlogDev.API.csproj",
         "projectName": "BlogDev.API",
-        "projectPath": "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.API\\BlogDev.API.csproj",
+        "projectPath": "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.API\\BlogDev.API.csproj",
         "packagesPath": "C:\\Users\\Olive\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.API\\obj\\",
+        "outputPath": "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Olive\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,17 +26,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj": {
-                "projectPath": "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj"
-              },
-              "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Service\\BlogDev.Service\\BlogDev.Service.csproj": {
-                "projectPath": "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Service\\BlogDev.Service\\BlogDev.Service.csproj"
+              "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj": {
+                "projectPath": "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj"
               }
             }
           }
@@ -50,6 +52,12 @@
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[7.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.10, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -75,21 +83,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj": {
+    "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj",
+        "projectUniqueName": "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj",
         "projectName": "BlogDev.Model",
-        "projectPath": "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj",
+        "projectPath": "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj",
         "packagesPath": "C:\\Users\\Olive\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Model\\obj\\",
+        "outputPath": "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Olive\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -97,6 +109,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -168,66 +181,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Service\\BlogDev.Service\\BlogDev.Service.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Service\\BlogDev.Service\\BlogDev.Service.csproj",
-        "projectName": "BlogDev.Service",
-        "projectPath": "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Service\\BlogDev.Service\\BlogDev.Service.csproj",
-        "packagesPath": "C:\\Users\\Olive\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Service\\BlogDev.Service\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\Olive\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net6.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net6.0": {
-            "targetAlias": "net6.0",
-            "projectReferences": {
-              "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj": {
-                "projectPath": "C:\\Users\\Olive\\source\\repos\\OliveiraRobson\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj"
-              }
-            }
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net6.0": {
-          "targetAlias": "net6.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -1,8 +1,4 @@
 using BlogDev.Model.Context;
-using BlogDev.Model.Inferfaces;
-using BlogDev.Model.Repository;
-using BlogDev.Service.Interfaces;
-using BlogDev.Service.PostService;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,8 +11,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<BlogDevContext>(options => options.UseSqlServer("Server=DESKTOP-E4RADFI;Database=BlogDev;integrated security=True;Encrypt=False"));
 
-builder.Services.AddTransient<IRepositoryWrapper, RepositoryWrapper>();
-builder.Services.AddTransient<IFindCategoryPostService, FindCategoryPostService>();
 
 var app = builder.Build();
 

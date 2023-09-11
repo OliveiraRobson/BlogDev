@@ -9,7 +9,6 @@
       "BlogDev.API/1.0.0": {
         "dependencies": {
           "BlogDev.Model": "1.0.0",
-          "BlogDev.Service": "1.0.0",
           "Microsoft.EntityFrameworkCore": "7.0.0",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
@@ -1391,14 +1390,6 @@
         "runtime": {
           "BlogDev.Model.dll": {}
         }
-      },
-      "BlogDev.Service/1.0.0": {
-        "dependencies": {
-          "BlogDev.Model": "1.0.0"
-        },
-        "runtime": {
-          "BlogDev.Service.dll": {}
-        }
       }
     }
   },
@@ -2389,11 +2380,6 @@
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
     "BlogDev.Model/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "BlogDev.Service/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

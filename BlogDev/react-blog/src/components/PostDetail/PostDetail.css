@@ -1,0 +1,130 @@
+.post-detail-container {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+    max-width: 850px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .post-header {
+    background-color: #2f3b52;  /* Slight color tweak */
+    color: #ffffff;
+    text-align: center;
+    padding: 40px 0;   /* Increased padding */
+  }
+  
+  .post-header h1 {
+    font-size: 2.5em;  /* Increased size for emphasis */
+    margin: 0;
+    letter-spacing: -1px;  /* Slight adjustment for aesthetics */
+  }
+  
+  .post-header time {
+    font-size: 1em;  /* Adjusted font size */
+    color: #b1bdc9;  /* Slight color tweak */
+    display: block;
+    margin-top: 15px;  /* Increased margin */
+    font-style: italic;  /* Added style */
+  }
+  
+  .post-image {
+    width: 100%;
+    display: block;
+    margin: 0;
+    border-top: 2px solid #e8ebf3;  /* Adjusted border */
+    border-bottom: 2px solid #e8ebf3;  /* Adjusted border */
+  }
+  
+  figcaption {
+    text-align: center;
+    margin: 10px 0;
+    font-style: italic;
+    color: #7f8a9f;  /* Slight color tweak */
+  }
+  
+  .post-content {
+    padding: 25px 40px;  /* Adjusted padding */
+  }
+  
+  .post-content h2 {
+    font-size: 1.6em;  /* Increased font size */
+    border-bottom: 3px solid #a1aebf;  /* Adjusted border */
+    padding-bottom: 10px;
+    margin-top: 35px;  /* Increased margin */
+  }
+  
+  .post-content p {
+    text-align: justify;
+    margin-top: 25px;  /* Increased margin */
+    font-size: 1.05em;  /* Adjusted font size */
+  }
+  
+  .post-content ul {
+    margin-top: 25px;
+    list-style-type: disc;  /* Added bullet points */
+    padding-left: 20px;  /* Indentation */
+  }
+  
+  .post-content ul li {
+    margin-top: 15px;  /* Adjusted margin */
+  }
+  
+  .post-content a {
+    color: #2d4a7a;  /* Adjusted color */
+    text-decoration: none;
+    transition: color 0.3s;
+    border-bottom: 1px dashed #2d4a7a;  /* Added border effect */
+  }
+  
+  .post-content a:hover {
+    color: #1a365d;
+    border-bottom: solid 1px;  /* Adjusted border effect on hover */
+  }
+/* Like Section */
+.like-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.comment-section-title {
+    font-weight: bold;
+    margin-top: 20px;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+}
+
+.comment {
+    margin-bottom: 15px;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.comment-author {
+    font-weight: bold;
+}
+
+.add-comment {
+    margin-top: 20px;
+}
+
+.add-comment textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+  
+  @media (max-width: 600px) {
+    .post-content, .post-header {
+      padding: 20px;
+    }
+  
+    .post-header h1 {
+      font-size: 1.9em;
+    }
+  }
+  

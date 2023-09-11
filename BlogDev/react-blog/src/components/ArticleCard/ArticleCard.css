@@ -1,4 +1,6 @@
-
+.ContentArtic{
+ margin-bottom: 20px;
+}
 .article{
   display: flex;
   flex-flow: row wrap;
@@ -7,7 +9,7 @@
 
 
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 3px solid #ddd;
     padding: 1rem;
     margin: 1rem;
 
@@ -52,16 +54,14 @@
    
     }
     
-    .article-card:nth-child(4n) {
-      margin-right: 0;
-    }
+   
   } 
   @media (max-width: 767px) {
     /* Estilo para dispositivos móveis */
     
       
     .article {
-      margin-left: 95px;
+      margin: 0 34px;
       /* Remove o float para dispositivos móveis */
     }
   }
