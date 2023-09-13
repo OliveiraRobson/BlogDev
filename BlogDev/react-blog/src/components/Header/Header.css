@@ -1,68 +1,80 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #222;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.site-title a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  color: #ffffff;
+  transition: color 0.3s;
+}
+
+.site-title a:hover {
+  color: #ddd;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.site-navigation .menu {
+  display: flex;
+  gap: 1rem;
+}
+
+.site-navigation .menu li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s;
+}
+
+.site-navigation .menu li a:hover {
+  background-color: #333;
+  border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+      display: block;
   }
-  
-  .logo h1 {
-    font-size: 1.5rem;
-  }
-  
-  .menu {
-    display: flex;
-  }
-  
-  .menu ul {
-    list-style: none;
-    display: flex;
-  }
-  
-  .menu li {
-    margin-right: 1rem;
-  }
-  
-  .menu a {
-    text-decoration: none;
-    color: white;
-  }
-  
-  .mobile-menu {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  
-  .bar {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 3px 0;
-  }
-  
-  .open {
-    transform: translateX(0);
-  }
-  
-  @media (max-width: 768px) {
-    .menu {
+
+  .site-navigation .menu {
       display: none;
       flex-direction: column;
       position: absolute;
-      top: 60px;
-      right: 20px;
-      background-color: #333;
-      width: 150px;
-      border-radius: 4px;
-      padding: 10px;
-      transform: translateX(-150%);
-      transition: transform 0.3s ease-in-out;
-    }
-  
-    .mobile-menu {
-      display: flex;
-    }
+      top: 100%;
+      right: 0;
+      background-color: #222;
+      border: 1px solid #333;
+      border-radius: 0 0 5px 5px;
   }
-  
+
+  .site-navigation .menu.hidden {
+      display: none;
+  }
+
+  .site-navigation .menu li {
+      text-align: right;
+  }
+
+  .site-navigation .menu li a {
+      display: block;
+      padding: 0.5rem 2rem;
+  }
+}

@@ -1,40 +1,26 @@
 import React, { useState } from 'react';
 import './Header.css';
-
-// ... (código anterior)
-
-const Header = () => {
+import { Link } from 'react-router-dom';
+function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-  
-    const toggleMenu = () => {
-      setMenuOpen(!menuOpen);
-    };
-  
-    const closeMenu = () => {
-      setMenuOpen(false);
-    };
-  
+
     return (
-      <header className="header">
-        <div className="logo">
-          <h1>BRS</h1>
-        </div>
-        <nav className={`menu ${menuOpen ? 'open' : ''}`}>
-          <ul>
-            <li><a href="/artigos" onClick={closeMenu}>Home</a></li>
-            <li><a href="#" onClick={closeMenu}>Produtos</a></li>
-            <li><a href="#" onClick={closeMenu}>Contato</a></li>
-            <li><a href="#" onClick={closeMenu}>Login</a></li>
-          </ul>
-        </nav>
-        <div className="mobile-menu" onClick={toggleMenu}>
-          <div className={`bar ${menuOpen ? 'open' : ''}`} />
-          <div className={`bar ${menuOpen ? 'open' : ''}`} />
-          <div className={`bar ${menuOpen ? 'open' : ''}`} />
-        </div>
-      </header>
+        <header className="site-header">
+            <div className="header-content">
+                <h1 className="site-title"><a href="/">Nome do Seu Site</a></h1>
+                <nav className="site-navigation">
+                    <ul className={menuOpen ? 'menu' : 'menu hidden'}>
+                        <li><Link to="/" >Início</Link></li>
+                        <li><Link to="/article" href="/Artigos">article</Link></li>
+                        <li><a href="/contato">Contato</a></li>
+                    </ul>
+                </nav>
+                <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+                    &#9776;
+                </div>
+            </div>
+        </header>
     );
-  };
-  
-  export default Header;
-  
+}
+
+export default Header;

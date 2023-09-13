@@ -1,68 +1,80 @@
-.ContentArtic{
- margin-bottom: 20px;
+.artigo-card {
+  position: relative;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+ 
+  overflow: hidden;
+  
+  transition: transform 0.3s;
 }
-.article{
+.article-link {
+  text-decoration: none;
+  color: inherit; /* Isso mantém a cor do texto como está */
+}
+.artigo-card:hover {
+  transform: scale(1.05);
+}
+
+.artigo-card:hover .artigo-image-overlay {
+  opacity: 0.3;
+}
+
+.artigo-image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ffa726, transparent);
+  transition: opacity 0.3s;
+  z-index: 1;
+  opacity: 0;
+}
+
+.artigo-image {
+  width: 100%;
+  height: auto;
+  filter: grayscale(0.5);
+  transition: filter 0.3s;
+}
+
+.artigo-card:hover .artigo-image {
+  filter: grayscale(0);
+}
+
+.artigo-content {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.artigo-title {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.artigo-author, .artigo-date {
+  font-size: 0.9rem;
+  color: #777;
   display: flex;
-  flex-flow: row wrap;
+  align-items: center;
 }
-.article-card {
 
+.artigo-category {
+  background: #ffa726;
+  padding: 5px 10px;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+  display: inline-block;
+}
 
-    background-color: #fff;
-    border: 3px solid #ddd;
-    padding: 1rem;
-    margin: 1rem;
-
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    
+.icon-user, .icon-calendar {
+  margin-right: 5px;
+  /* Apenas um placeholder, você pode substituir por ícones de verdade. */
+}
+@media (max-width: 768px) {
+  .artigo-card {
+    width: 100%; /* Ocupa a largura total em dispositivos móveis */
   }
-  
-  .article-image {
-    width: 100%;
-    max-height: 150px;
-    object-fit: cover;
-    border-radius: 4px;
-    position: relative;
-    top: -29px;
-  }
-  
-  .article-title {
-    margin-top: 0.5rem;
-    font-size: 1.25rem;
-  }
-  
-  .article-description {
-    color: #555;
-  }
-  
-  .article-date {
-    color: #999;
-    font-size: 0.8rem;
-  }
-
-
-   @media (min-width: 768px) {
-    .app {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-    /* A partir de 768px (resoluções de tablet e computador) */
-    .article-card {
-      max-width: calc(25% - 2rem);
-   
-    }
-    
-   
-  } 
-  @media (max-width: 767px) {
-    /* Estilo para dispositivos móveis */
-    
-      
-    .article {
-      margin: 0 34px;
-      /* Remove o float para dispositivos móveis */
-    }
-  }
-
+}
