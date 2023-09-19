@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
+    const handleLogout = () => {
+        localStorage.removeItem('accesso'); // Remove o token de autenticação
+        navigate('/login'); // Redireciona o usuário para a página de login
+    };
     return (
         <header className="site-header">
             <div className="header-content">
@@ -12,7 +18,9 @@ function Header() {
                     <ul className={menuOpen ? 'menu' : 'menu hidden'}>
                         <li><Link to="/" >Início</Link></li>
                         <li><Link to="/article" href="/Artigos">article</Link></li>
-                        <li><a href="/contato">Contato</a></li>
+                        <li><Link to="/login" href="/login">login</Link></li>
+                        <li><Link to="/articleEdicao" href="/articleEdicao">article Edicao</Link></li>
+                        <li><Link to="/login" onClick={handleLogout} className="logout-btn">Logout</Link></li>
                     </ul>
                 </nav>
                 <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>

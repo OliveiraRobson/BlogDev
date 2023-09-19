@@ -4,17 +4,17 @@ import React, { useState } from 'react';
 import ArtigosPage from './pages/ArtigosPage/ArtigosPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
+
+import DefaultLayout from './pages/DefaultLayout';
+import AppLayout from './pages/AppLayout/AppLayout'
+import ProtectedRoute from './routes/ProtectedRoute';
+import ArtigosEdicao from './pages/ArtigosEdicao/ArtigosEdicao';
 import Home from './pages/Home/Home';
-
-import ArticleCard from './components/ArticleCard/ArticleCard';
-
-import ArtigoCard from './components/ArtigoCard/ArtigoCard';
 import SocialBar from './components/SocialBar/SocialBar';
-import PostDetail from './components/PostDetail/PostDetail';
 import Header from './components/Header/Header';
-import Pagination from './components/Pagination/Pagination';
-import ArticleCarousel from './components/ArticleCarousel/ArticleCarousel';
 import Footer from './components/Footer/Footer';
+import LoginPage from './pages/LoginPage/LoginPage';
+// import ProtectedRoute from './routes/ProtectedRoute';
 
 function App() {
 
@@ -100,23 +100,18 @@ function App() {
   return (
 
     <div className="App">
+      {/* <Login /> */}
       <Router>
-        <Header />
-
-        <Routes>
-          <Route path="/" element={<Home />} />
-          {/* {/* <Route path="/about" element={<About />} /> */}
-          <Route path="/article" element={<ArtigosPage />} /> 
-          {/* Adicione outras rotas conforme necessário */}
-        </Routes>
-        <SocialBar />
-        <Footer />
-      </Router>
-
-      {/* <ArticleCarousel articles={articlescor} /> */}
-
-      {/* <PostDetail post={fakePost} /> */}
-
+            <Routes>
+                <Route path="/login" element={<LoginPage />} />
+                <Route element={<DefaultLayout />} >
+                    <Route index element={<Home />} />
+                    {/* {/* <Route path="/about" element={<AboutPage />} /> */}
+                    <Route path="/articleEdicao" element={<ArtigosEdicao />} />
+                    {/* ... outras rotas aqui */}
+                </Route>
+            </Routes>
+        </Router>
     </div>
   );
 }

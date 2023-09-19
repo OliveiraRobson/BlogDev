@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\Olive\\BlogDev\\BlogDev\\DataBase\\DataBase.csproj": {}
+    "C:\\Users\\Olive\\BlogDev\\BlogDev\\DataBase\\DataBase.csproj": {}
   },
   "projects": {
-    "c:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj": {
+    "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj",
+        "projectUniqueName": "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj",
         "projectName": "BlogDev.Model",
-        "projectPath": "c:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj",
+        "projectPath": "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj",
         "packagesPath": "C:\\Users\\Olive\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\obj\\",
+        "outputPath": "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -102,14 +102,14 @@
         }
       }
     },
-    "c:\\Users\\Olive\\BlogDev\\BlogDev\\DataBase\\DataBase.csproj": {
+    "C:\\Users\\Olive\\BlogDev\\BlogDev\\DataBase\\DataBase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\Olive\\BlogDev\\BlogDev\\DataBase\\DataBase.csproj",
+        "projectUniqueName": "C:\\Users\\Olive\\BlogDev\\BlogDev\\DataBase\\DataBase.csproj",
         "projectName": "DataBase",
-        "projectPath": "c:\\Users\\Olive\\BlogDev\\BlogDev\\DataBase\\DataBase.csproj",
+        "projectPath": "C:\\Users\\Olive\\BlogDev\\BlogDev\\DataBase\\DataBase.csproj",
         "packagesPath": "C:\\Users\\Olive\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\Olive\\BlogDev\\BlogDev\\DataBase\\obj\\",
+        "outputPath": "C:\\Users\\Olive\\BlogDev\\BlogDev\\DataBase\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -131,8 +131,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "c:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj": {
-                "projectPath": "c:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj"
+              "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj": {
+                "projectPath": "C:\\Users\\Olive\\BlogDev\\BlogDev\\BlogDev.Model\\BlogDev.Model.csproj"
               }
             }
           }

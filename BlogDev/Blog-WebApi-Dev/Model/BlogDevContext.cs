@@ -8,7 +8,7 @@ namespace Blog_WebApi_Dev.Model
         public BlogContext(DbContextOptions<BlogContext> options) : base(options)
         {
         }
-        public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Usuario> Usuario { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Post> Post { get; set; }
         public DbSet<Tag> Tags { get; set; }
@@ -39,11 +39,11 @@ namespace Blog_WebApi_Dev.Model
     public class Usuario
     {
         public int UsuarioID { get; set; }
-        public string Nome { get; set; }
-        public string Email { get; set; }
+        public string? Nome { get; set; }
+        public string? Email { get; set; }
         public string Senha { get; set; }
         public DateTime DataCadastro { get; set; }
-        public string Localizacao { get; set; }
+        public string? Localizacao { get; set; }
 
         public List<Post> Posts { get; set; }
         public List<Comentario> Comentarios { get; set; }
@@ -129,4 +129,45 @@ namespace Blog_WebApi_Dev.Model
         public int PostID { get; set; }
         public Post Post { get; set; }
     }
-}
+
+
+public static class UsuarioEndpoints
+{
+	public static void MapUsuarioEndpoints (this IEndpointRouteBuilder routes)
+    {
+        routes.MapGet("/api/Usuario", () =>
+        {
+            return new [] { new Usuario() };
+        })
+        .WithName("GetAllUsuarios")
+        .Produces<Usuario[]>(StatusCodes.Status200OK);
+
+        routes.MapGet("/api/Usuario/{id}", (int id) =>
+        {
+            //return new Usuario { ID = id };
+        })
+        .WithName("GetUsuarioById")
+        .Produces<Usuario>(StatusCodes.Status200OK);
+
+        routes.MapPut("/api/Usuario/{id}", (int id, Usuario input) =>
+        {
+            return Results.NoContent();
+        })
+        .WithName("UpdateUsuario")
+        .Produces(StatusCodes.Status204NoContent);
+
+        routes.MapPost("/api/Usuario/", (Usuario model) =>
+        {
+            //return Results.Created($"//api/Usuarios/{model.ID}", model);
+        })
+        .WithName("CreateUsuario")
+        .Produces<Usuario>(StatusCodes.Status201Created);
+
+        routes.MapDelete("/api/Usuario/{id}", (int id) =>
+        {
+            //return Results.Ok(new Usuario { ID = id });
+        })
+        .WithName("DeleteUsuario")
+        .Produces<Usuario>(StatusCodes.Status200OK);
+    }
+}}
