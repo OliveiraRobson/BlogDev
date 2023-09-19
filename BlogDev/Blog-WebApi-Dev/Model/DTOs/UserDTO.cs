@@ -9,10 +9,6 @@ namespace Blog_WebApi_Dev.Model.DTOs
         [StringLength(50, MinimumLength = 5)]
         public string PrimeiroNome { get; set; }
 
-  
-        [StringLength(50, MinimumLength = 5)]
-        public string UltimoNome { get; set; }
-
         [Required]
         [StringLength(100, MinimumLength = 5)]
         [EmailAddress]

@@ -62,16 +62,19 @@ namespace Blog_WebApi_Dev.Controllers
         {
             if (ModelState.IsValid)
             {
-                var existingUser = _userService.FindByEmail(userDto.Email);
+                var existingUser = _authService.VerificarEmail(userDto.Email);
                 if (existingUser != null)
                 {
                     return BadRequest("Email já está em uso.");
                 }
-
+             
                 var user = userDto.ToUser();
                 var newUser = _authService.Register(user, userDto.Password);
 
-                return CreatedAtAction(nameof(Register), newUser.ToDTO());
+                CreatedAtAction(nameof(Register), newUser.ToDTO());
+                var token = _generateJwtToken.GenerateJwtTokens(user);
+
+                return Ok(new { token = token });
             }
 
             return BadRequest(ModelState);

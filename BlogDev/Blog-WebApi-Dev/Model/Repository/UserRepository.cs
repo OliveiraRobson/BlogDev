@@ -18,17 +18,17 @@ namespace Blog_WebApi_Dev.Model.Repository
             return user;
         }
 
+        public bool VerificarSeExiste(string? email)
+        {
+            var emailExists = _context.Usuario.Any(u => u.Email == email);
+
+            return emailExists;
+        }
         public Usuario GetUserByEmail(string? email)
         {
-            var user = _context.Usuario.FirstOrDefault(u => u.Email == email.ToString());
-            if (user != null)
-            {
-                string? nome = user.Nome;
-                email = user.Email;
-                //... inspect other properties similarly ...
-            }
+            var usuario = _context.Usuario.FirstOrDefault(u => u.Email == email);
 
-            return user;
+            return usuario;
         }
     }
 }

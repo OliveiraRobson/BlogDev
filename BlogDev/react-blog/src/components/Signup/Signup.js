@@ -6,6 +6,8 @@ import { registerUser } from '../../services/authService';  // Esta função dev
 
 function Signup() {
     const [email, setEmail] = useState('');
+    const [nome, setNome] = useState('');
+
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [error, setError] = useState('');
@@ -23,7 +25,7 @@ function Signup() {
 
         try {
             // Esta função deve enviar os dados para a API para criar uma nova conta.
-            await registerUser(email, password);
+            await registerUser(email, password,nome);
             navigate('/login');
         } catch (err) {
             // Trate erros de cadastro aqui.
@@ -35,6 +37,8 @@ function Signup() {
         <div className="signup-container">
             <form className="signup-form" onSubmit={handleSignup}>
                 <h2>Cadastro</h2>
+                <label htmlFor="email">Nome</label>
+                <input id="email" value={nome} onChange={e => setNome(e.target.value)} placeholder="Digite seu nome" required />
 
                 <label htmlFor="email">Email</label>
                 <input id="email" type="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="Digite seu email" required />

@@ -6,6 +6,7 @@ namespace Blog_WebApi_Dev.Services.Interfaces
     {
         public Usuario Authenticate(string email, string password);
         public Usuario Register(Usuario user, string password);
+        public Usuario VerificarEmail(string email);
 
     }
 }

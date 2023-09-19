@@ -23,7 +23,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<BlogContext>(options =>
-    options.UseSqlServer("Server=DESKTOP-B4GLFC2;Database=BlogDev;integrated security=True;Encrypt=False"));
+    options.UseSqlServer("Server=sql8006.site4now.net;Database=db_a9f252_blogdev;User Id=db_a9f252_blogdev_admin;Password=R@bson510932;"));
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IPasswordService, PasswordService>();
 
