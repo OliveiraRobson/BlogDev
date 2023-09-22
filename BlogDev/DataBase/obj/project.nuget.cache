@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BpsEao9yWbo57uV4Q9QSvVvIs7hNLJPuG4vsjv+GqMtO+5vijLd5DUTpx9EPIdwpDRwjGfjuz9N+69MBKtvyaA==",
+  "dgSpecHash": "peHlZn3u6h/FcuVk71P2RUUrxbA+ldGIzIdvUmMJEsjmHuyVCrzmFH+GyfXRWI7SvtKBJU4VkDho+tM7NER3YA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Olive\\BlogDev\\BlogDev\\DataBase\\DataBase.csproj",
+  "projectFilePath": "c:\\Users\\Olive\\BlogDev\\BlogDev\\DataBase\\DataBase.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Olive\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Olive\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

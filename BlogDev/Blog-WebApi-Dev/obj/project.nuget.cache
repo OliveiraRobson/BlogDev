@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "2Cb7IhAj05wr5BoY7d0ks1rV0XPMhRqG75oKV9J9s657XdFjTbmKcqI9ur3vpQIi/rOFg/xNaaQvgsQmBC9qSA==",
+  "dgSpecHash": "K/3PZWlXW/bLUsXfJ3lxaC1Y1vHGyskSDGP38R65cr3VWA7QJhs8IUaOVIprMsHpazg33Egeu22rI2dXKkIHNg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Olive\\BlogDev\\BlogDev\\Blog-WebApi-Dev\\Blog-WebApi-Dev.csproj",
+  "projectFilePath": "c:\\Users\\Olive\\BlogDev\\BlogDev\\Blog-WebApi-Dev\\Blog-WebApi-Dev.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Olive\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Olive\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
@@ -64,6 +64,7 @@
     "C:\\Users\\Olive\\.nuget\\packages\\microsoft.aspnetcore.authentication.cookies\\2.2.0\\microsoft.aspnetcore.authentication.cookies.2.2.0.nupkg.sha512",
     "C:\\Users\\Olive\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
     "C:\\Users\\Olive\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.21\\microsoft.aspnetcore.authentication.jwtbearer.6.0.21.nupkg.sha512",
+    "C:\\Users\\Olive\\.nuget\\packages\\microsoft.aspnetcore.cors\\2.2.0\\microsoft.aspnetcore.cors.2.2.0.nupkg.sha512",
     "C:\\Users\\Olive\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\2.2.0\\microsoft.aspnetcore.cryptography.internal.2.2.0.nupkg.sha512",
     "C:\\Users\\Olive\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\2.2.0\\microsoft.aspnetcore.cryptography.keyderivation.2.2.0.nupkg.sha512",
     "C:\\Users\\Olive\\.nuget\\packages\\microsoft.aspnetcore.dataprotection\\2.2.0\\microsoft.aspnetcore.dataprotection.2.2.0.nupkg.sha512",

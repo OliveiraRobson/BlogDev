@@ -62,21 +62,16 @@ builder.Services.AddCors(options =>
     //                     .AllowAnyMethod()
     //                     .AllowAnyHeader());
 
-    options.AddPolicy("AllowSpecificOrigin",
-       builder =>
-       {
-           builder.WithOrigins("https://vidaembits.com.br/")
-                  .AllowAnyHeader()
-                  .AllowAnyMethod();
-       });
+  
+      
     options.AddPolicy("Producao",
-       builder => builder.WithOrigins("https://vidaembits.com.br/")
+       builder => builder.WithOrigins("https://vidaembits.com.br/", "http://localhost:3000")
                          .AllowAnyMethod()
                          .AllowAnyHeader());
 });
 var app = builder.Build();
 //app.UseCors("AllowLocalhost3000");
-app.UseCors("AllowSpecificOrigin");
+app.UseCors("Producao");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
