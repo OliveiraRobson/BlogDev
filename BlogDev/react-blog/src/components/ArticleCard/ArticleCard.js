@@ -16,7 +16,7 @@ function ArticleCard() {
         topRef.current.scrollIntoView({ behavior: 'smooth' });
     };
     useEffect(() => {
-        fetch('http://vidaembits-001-site1.ftempurl.com/Posts') // Ajuste essa URL conforme necessário
+        fetch('https://vidaembits-001-site1.ftempurl.com/Posts') // Ajuste essa URL conforme necessário
             .then(response => response.json())
             .then(data => {
                 setPosts(data);

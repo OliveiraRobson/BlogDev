@@ -57,13 +57,26 @@ var key = Encoding.ASCII.GetBytes("sua-chave-secreta-aqui"); // Mantenha esta ch
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowLocalhost3000",
-       builder => builder.WithOrigins("http://localhost:3000")
+    //options.AddPolicy("AllowLocalhost3000",
+    //   builder => builder.WithOrigins("http://localhost:3000")
+    //                     .AllowAnyMethod()
+    //                     .AllowAnyHeader());
+
+    options.AddPolicy("AllowSpecificOrigin",
+       builder =>
+       {
+           builder.WithOrigins("https://vidaembits.com.br/")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+       });
+    options.AddPolicy("Producao",
+       builder => builder.WithOrigins("https://vidaembits.com.br/")
                          .AllowAnyMethod()
                          .AllowAnyHeader());
 });
 var app = builder.Build();
-app.UseCors("AllowLocalhost3000");
+//app.UseCors("AllowLocalhost3000");
+app.UseCors("AllowSpecificOrigin");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

@@ -39,7 +39,7 @@ export function loginUser(email, senha) {
     // const formData = qs.stringify(data);
     const formData = qs.stringify(data);
 
-    return axios.post('http://vidaembits-001-site1.ftempurl.com/api/Login/', formData, {
+    return axios.post('https://vidaembits-001-site1.ftempurl.com/api/Login/', formData, {
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded'
         }

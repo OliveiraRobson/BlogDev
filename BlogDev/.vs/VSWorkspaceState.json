@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Blog-WebApi-Dev",
+    "\\BlogDev.API"
   ],
-  "SelectedNode": "\\BlogDev.sln",
+  "SelectedNode": "\\Blog-WebApi-Dev\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
