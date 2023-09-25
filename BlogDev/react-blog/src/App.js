@@ -10,7 +10,7 @@ import ArtigosEdicao from './pages/ArtigosEdicao/ArtigosEdicao';
 import Home from './pages/Home/Home';
 import SocialBar from './components/SocialBar/SocialBar';
 import LoginPage from './pages/LoginPage/LoginPage';
-
+import ProtectedRoute from './routes/ProtectedRoute';
 
 function App() {
 
@@ -98,17 +98,20 @@ function App() {
     <div className="App">
       {/* <Login /> */}
       <Router>
-            <Routes>
-                <Route path="/login" element={<LoginPage />} />
-                <Route path="/signup" element={<SigupPage/>} />
-                <Route element={<DefaultLayout />} >
-                    <Route index element={<Home />} />
-                    {/* {/* <Route path="/about" element={<AboutPage />} /> */}
-                    <Route path="/articleEdicao" element={<ArtigosEdicao />} />
-                    {/* ... outras rotas aqui */}
-                </Route>
-            </Routes>
-        </Router>
+        <Routes>
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SigupPage />} />
+          <Route element={<DefaultLayout />} >
+            <Route index element={<Home />} />
+            {/* {/* <Route path="/about" element={<AboutPage />} /> */}
+            <Route element={<ProtectedRoute />}>
+              <Route path="/articleEdicao" element={<ArtigosEdicao />} />
+
+            </Route>
+          </Route>
+
+        </Routes>
+      </Router>
     </div>
   );
 }

@@ -13,6 +13,7 @@ using Blog_WebApi_Dev.Services.usuario;
 using Blog_WebApi_Dev.Services;
 using Blog_WebApi_Dev.Model.Repository.interfaces;
 using Blog_WebApi_Dev.Model.Repository;
+using Blog_WebApi_Dev.Services.postServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,11 +27,15 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<BlogContext>(options =>
     options.UseSqlServer("Server=sql8006.site4now.net;Database=db_a9f252_blogdev;User Id=db_a9f252_blogdev_admin;Password=R@bson510932;"));
 builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IPostRepository, PostRepository>();
+
 builder.Services.AddTransient<IPasswordService, PasswordService>();
 
 builder.Services.AddTransient<IGenerateJwtToken, GenerateJwtToken>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IAuthService, AuthService>();
+builder.Services.AddTransient<IPostService, PostService>();
+
 
 
 var key = Encoding.ASCII.GetBytes("sua-chave-secreta-aqui"); // Mantenha esta chave em segredo e não a exponha!

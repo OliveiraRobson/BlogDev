@@ -43,5 +43,21 @@ namespace Blog_WebApi_Dev.Extensions
                 return builder.ToString();
             }
         }
+
+        public static Post ToPost(this PostDTO postDTO)
+        {
+            return new Post
+            {
+                Titulo = postDTO.Titulo,
+                Conteudo = postDTO.Conteudo,
+                DataPublicacao = postDTO.DataPublicacao,
+                UsuarioID = postDTO.UsuarioID,
+                CategoriaID = postDTO.CategoriaID
+            };
+        }
+
+
+
+
     }
 }

@@ -13,7 +13,7 @@ function Header() {
     return (
         <header className="site-header">
             <div className="header-content">
-                <h1 className="site-title"><a href="/">Nome do Seu Site</a></h1>
+                <h1 className="site-title"><a href="/">Vidaembits</a></h1>
                 <nav className="site-navigation">
                     <ul className={menuOpen ? 'menu' : 'menu hidden'}>
                         <li><Link to="/" >Início</Link></li>
@@ -25,7 +25,7 @@ function Header() {
                 </nav>
                 <div className="hamburger" onClick={() => {
                     setMenuOpen(!menuOpen);
-                    console.log("Menu state:", !menuOpen);
+                
                 }}>
                     &#9776;
                 </div>

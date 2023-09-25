@@ -1,5 +1,6 @@
 
 import { Navigate, useLocation } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 
 function ProtectedRoute({ children }) {
     console.log(localStorage.getItem('accesso'));
@@ -11,7 +12,7 @@ function ProtectedRoute({ children }) {
         return <Navigate to="/login" state={{ from: location }} />;
     }
 
-    return children;
+    return <Outlet />;
 }
 
 export default ProtectedRoute;
