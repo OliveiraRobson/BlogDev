@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K/3PZWlXW/bLUsXfJ3lxaC1Y1vHGyskSDGP38R65cr3VWA7QJhs8IUaOVIprMsHpazg33Egeu22rI2dXKkIHNg==",
+  "dgSpecHash": "B1PFlsO7Q+23SAIVeDYt1zF+8rHJkkC13VZxW2vLrfPey7oOfhXsBS4VYWXVWMlhbMebWmIepLualjwnnui8RA==",
   "success": true,
-  "projectFilePath": "c:\\Users\\Olive\\BlogDev\\BlogDev\\Blog-WebApi-Dev\\Blog-WebApi-Dev.csproj",
+  "projectFilePath": "C:\\Users\\Olive\\BlogDev\\BlogDev\\Blog-WebApi-Dev\\Blog-WebApi-Dev.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Olive\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\Olive\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

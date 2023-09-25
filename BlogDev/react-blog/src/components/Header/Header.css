@@ -10,6 +10,7 @@
 .header-content {
   display: flex;
   align-items: center;
+  position: relative;
   width: 100%;
   justify-content: space-between;
 }
@@ -62,6 +63,8 @@
 @media (max-width: 768px) {
   .hamburger {
       display: block;
+      position: relative;
+      z-index: 999; 
   }
 
   .site-navigation .menu {
@@ -75,16 +78,19 @@
       border-radius: 0 0 5px 5px;
   }
 
-  .site-navigation .menu.hidden {
-      display: none;
+  .site-navigation .menu:not(.hidden) {
+
+    display: flex;
+    z-index: 999; 
+
   }
 
   .site-navigation .menu li {
-      text-align: right;
+    text-align: right;
   }
 
   .site-navigation .menu li a {
-      display: block;
-      padding: 0.5rem 2rem;
+    display: block;
+    padding: 0.5rem 2rem;
   }
 }

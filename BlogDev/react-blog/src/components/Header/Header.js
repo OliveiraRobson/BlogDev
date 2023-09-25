@@ -23,7 +23,10 @@ function Header() {
                         <li><Link to="/login" onClick={handleLogout} className="logout-btn">Logout</Link></li>
                     </ul>
                 </nav>
-                <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+                <div className="hamburger" onClick={() => {
+                    setMenuOpen(!menuOpen);
+                    console.log("Menu state:", !menuOpen);
+                }}>
                     &#9776;
                 </div>
             </div>
