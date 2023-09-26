@@ -2,7 +2,7 @@ import './PostDetail.css';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getArticleById } from '../../services/PostService'; // Função fictícia para buscar artigo por ID.
-
+import {handleFacebookShare,handleTwitterShare,copyLinkToClipboard} from '../../utils/shareFunctions'
 function PostDetail() {
   const [article, setArticle] = useState(null);
   const { id } = useParams(); // Obtem o ID do artigo a partir da URL.
@@ -13,11 +13,11 @@ function PostDetail() {
       try {
         const fetchedArticle = await getArticleById(id);
         if (!fetchedArticle) {
-            throw new Error("Artigo não encontrado");
+          throw new Error("Artigo não encontrado");
         }
         setArticle(fetchedArticle);
       } catch (error) {
-        console.log("Definindo erro:", error.message);  
+        console.log("Definindo erro:", error.message);
         setError(error.message);
       }
     };
@@ -26,7 +26,7 @@ function PostDetail() {
   }, [id]);
   if (error) {
     return <div className="error-message">{error}</div>;
-}
+  }
   if (!article) {
     return <div>Carregando...</div>;
   }
@@ -54,6 +54,17 @@ function PostDetail() {
               </div>
             </div>
 
+          </div>
+          <div className="share-buttons">
+            <button className="share-button facebook" onClick={handleFacebookShare}>
+              <i className="icon-facebook"></i> Facebook
+            </button>
+            <button className="share-button twitter" onClick={handleTwitterShare}>
+              <i className="icon-twitter"></i> Twitter
+            </button>
+            <button className="share-button instagram" onClick={copyLinkToClipboard}>
+              <i className="icon-instagram"></i> Copiar para Instagram
+            </button>
           </div>
         </div>
       </div>
