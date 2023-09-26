@@ -1,85 +1,63 @@
-import React, { useState } from 'react';
+import './PostDetail.css';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { getArticleById } from '../../services/PostService'; // Função fictícia para buscar artigo por ID.
 
-import './PostDetail.css'; 
-const PostDetail = ({ post }) => {
-    const [likes, setLikes] = useState(123);
-    const [comments, setComments] = useState([
-        { author: 'John Doe', content: 'Great article! Thanks for sharing.' },
-        { author: 'Jane Smith', content: 'I found this really helpful. Keep up the good work!' }
-    ]);
-    const [newComment, setNewComment] = useState('');
+function PostDetail() {
+  const [article, setArticle] = useState(null);
+  const { id } = useParams(); // Obtem o ID do artigo a partir da URL.
+  const [error, setError] = useState(null);
 
-    const handleLike = () => {
-        setLikes(likes + 1);
-    };
-
-    const handleCommentChange = (e) => {
-        setNewComment(e.target.value);
-    };
-
-    const handleCommentSubmit = () => {
-        if (newComment.trim() !== '') {
-            setComments([...comments, { author: 'Current User', content: newComment }]);
-            setNewComment('');
+  useEffect(() => {
+    const fetchArticle = async () => {
+      try {
+        const fetchedArticle = await getArticleById(id);
+        if (!fetchedArticle) {
+            throw new Error("Artigo não encontrado");
         }
+        setArticle(fetchedArticle);
+      } catch (error) {
+        console.log("Definindo erro:", error.message);  
+        setError(error.message);
+      }
     };
+
+    fetchArticle();
+  }, [id]);
+  if (error) {
+    return <div className="error-message">{error}</div>;
+}
+  if (!article) {
+    return <div>Carregando...</div>;
+  }
+ 
   return (
-    <article className="post-detail-container">
-      <header className="post-header">
-        <h1>{post.title}</h1>
-        <time datetime={post.dateISO}>{post.date}</time>
-        <div onClick={handleLike}>
-                    <span className="like-icon">👍</span>
-                    <span>{likes}</span>
-                </div>
-      </header>
-   
-      <main className="post-content">
-        <figure>
-          <img src={post.image} alt={post.title} className="post-image" />
-          <figcaption>{post.imageCaption}</figcaption>
-        </figure>
+    <div className="article-view">
+      <h2>{article.titulo}</h2>
+      <p><strong>Publicado em:</strong> {new Date(article.dataPublicacao).toLocaleDateString()}</p>
+      <div dangerouslySetInnerHTML={{ __html: article.conteudo }}></div>
+      <div className="article-interactions">
+        <button className="like-button">
+          ❤ <span className="like-count">123</span>
+        </button>
 
-        <h2>Introdução</h2>
-        <p>{post.introduction}</p>
+        <div className="comment-section">
+          <textarea placeholder="Adicione um comentário..."></textarea>
+          <button className="submit-comment">Enviar</button>
 
-        <h2>A Evolução da Programação</h2>
-        <p>{post.evolution}</p>
-
-        <h2>As Linguagens Mais Promissoras</h2>
-        <ul>
-          {post.languages.map((lang, index) => (
-            <li key={index}><a href={lang.link}>{lang.name}</a>: {lang.description}</li>
-          ))}
-        </ul>
-
-        <h2>Conclusão</h2>
-        <p>{post.conclusion}</p>
-  
-{/* Comments Section */}
-<div className="comments-section">
-                <div className="comment-section-title">Comments</div>
-                {comments.map((comment, index) => (
-                    <div className="comment" key={index}>
-                        <div className="comment-author">{comment.author} says:</div>
-                        <div className="comment-content">"{comment.content}"</div>
-                    </div>
-                ))}
-
-                {/* Add Comment */}
-                <div className="add-comment">
-                    <textarea 
-                        placeholder="Add a comment..."
-                        value={newComment}
-                        onChange={handleCommentChange}
-                    ></textarea>
-                    <button onClick={handleCommentSubmit}>Post Comment</button>
-                </div>
+          <div className="comments-list">
+            <div className="single-comment">
+              <img src="avatar_url" alt="Nome do Usuário" className="comment-avatar" />
+              <div>
+                <h4>Robson</h4>
+                <p>texto muito bom</p>
+              </div>
             </div>
-   
-      </main>
-      
-    </article>
+
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

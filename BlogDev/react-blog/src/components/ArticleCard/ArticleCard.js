@@ -46,7 +46,7 @@ function ArticleCard() {
                             <div className="artigo-content">
                                 <h3 className="artigo-title">{post.titulo}</h3>
                                 <div className="artigo-category">{post.categoria}</div>
-                                <Link to="/article" className="artigo-author">
+                                <Link to={`/article/${post.postID}`} className="artigo-author">
                                     <i className="icon-user"></i>
                                     {post.titulo}
                                 </Link>

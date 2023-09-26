@@ -11,6 +11,7 @@ import Home from './pages/Home/Home';
 import SocialBar from './components/SocialBar/SocialBar';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ProtectedRoute from './routes/ProtectedRoute';
+import PostDetail from './components/PostDetail/PostDetail';
 
 function App() {
 
@@ -104,6 +105,7 @@ function App() {
           <Route element={<DefaultLayout />} >
             <Route index element={<Home />} />
             {/* {/* <Route path="/about" element={<AboutPage />} /> */}
+            <Route path="/article/:id" element={<PostDetail/>} />
             <Route element={<ProtectedRoute />}>
               <Route path="/articleEdicao" element={<ArtigosEdicao />} />
 

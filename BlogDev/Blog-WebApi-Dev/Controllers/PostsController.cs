@@ -28,6 +28,17 @@ namespace Blog_WebApi_Dev.Controllers
         {
             return  _context.Post.ToList();
         }
+        [HttpGet("GetPostByID")]
+        public ActionResult<Post> GetPostByID(int id)
+        {
+            var post = _context.Post.Find(id);
+
+            if (post == null)
+            {
+                return NotFound(new { error = "Artigo nao encontrado" });
+            }
+            return post;
+        }
         //[Authorize]
         [HttpPost]
         public ActionResult CriarPost([FromBody] PostDTO post)
@@ -37,7 +48,7 @@ namespace Blog_WebApi_Dev.Controllers
                 _post.criarPosts(post.ToPost());
                 return Ok(post);
             }
-            return null; 
+            return NotFound(new { error = "Nao pode criar o artigo." }); ; 
         }
 
         [HttpGet("Categoria")]

@@ -60,20 +60,31 @@ var key = Encoding.ASCII.GetBytes("sua-chave-secreta-aqui"); // Mantenha esta ch
     });
 
 
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowLocalhost3000",
+// builder =>
+// {
+//     builder.WithOrigins("http://localhost:3000")
+//            .AllowAnyMethod()
+//            .AllowAnyHeader();
+// });
+
+//});
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("Localhost",
+    options.AddPolicy("AllowLocalhost3000",
  builder =>
  {
-     builder.WithOrigins("http://localhost:3000")
+     builder.WithOrigins("https://vidaembits.com.br")
             .AllowAnyMethod()
             .AllowAnyHeader();
  });
 
 });
 
-
 var app = builder.Build();
+app.UseCors("AllowLocalhost3000");
 
 if (app.Environment.IsDevelopment())
 {
@@ -85,18 +96,7 @@ if (app.Environment.IsDevelopment())
 }
 else
 {
-    //builder.Services.AddCors(options =>
-    //{
-    //    options.AddPolicy("AllowLocalhost3000",
-    // builder =>
-    // {
-    //     builder.WithOrigins("https://vidaembits.com.br")
-    //            .AllowAnyMethod()
-    //            .AllowAnyHeader();
-    // });
 
-    //});
-    //app.UseCors("AllowLocalhost3000");
 
 }
 //app.UseCors("AllowLocalhost3000");
