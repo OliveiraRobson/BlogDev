@@ -19,7 +19,6 @@ function ArticleCard() {
         fetch('https://vidaembits-001-site1.ftempurl.com/Posts') // Ajuste essa URL conforme necessário
             .then(response => response.json())
             .then(data => {
-                console.log(data);
                 setPosts(data);
                 setLoading(false);
             })

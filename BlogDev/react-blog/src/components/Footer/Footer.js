@@ -29,9 +29,9 @@ const Footer = () => {
                 <div className="footer-section">
                 <h2 className="footer-title">Follow Us</h2>
                 <div className="social-links">
-                    <a href="https://facebook.com/YourPage" className="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">🔵</a>
-                    <a href="https://twitter.com/YourHandle" className="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">🔷</a>
-                    <a href="https://instagram.com/YourHandle" className="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">⭕</a>
+                    <a href="https://www.facebook.com/BarbaSentinel" className="social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">🔵</a>
+                    <a href="https://www.youtube.com/channel/UCpyIwfnpkfa05QclafBG_Bw" className="social-link" aria-label="Twitter" target="_blank" rel="noopener noreferrer">🔷</a>
+                    <a href="https://www.instagram.com/oliveira.rbs/" className="social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">⭕</a>
                     <a href="https://linkedin.com/in/YourProfile" className="social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">🔗</a>
                 </div>
             </div>
