@@ -3,7 +3,7 @@
 export function handleFacebookShare(title) {
     const urlToShare = window.location.href;
     const textToShare = `Confira este incrível artigo: ${title}`;
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlToShare)}&quote=${encodeURIComponent(textToShare)}`, 'popup', 'width=600,height=400');
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(textToShare)}&quote=${encodeURIComponent(urlToShare)}`, 'popup', 'width=600,height=400');
 }
 
 export function handleTwitterShare() {
