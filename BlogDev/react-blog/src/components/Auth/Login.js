@@ -31,8 +31,8 @@ function Login() {
       
           const isLoggedIn = await loginUser(email, password).then(token => {
             if(token){
+
                 setIsLoggedIn(true);
-                console.log("entrou");
                 navigate('/'); 
             }
            

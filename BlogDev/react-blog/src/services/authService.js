@@ -15,10 +15,11 @@ export function loginUser(email, senha) {
             'Content-Type': 'application/x-www-form-urlencoded'
         }
     }).then(response => {
-        if (response.data && response.data.token) {
-            // Aqui você pega o token da resposta
-            const token = response.data.token;
 
+        if (response.data && response.data.usuarioinfo.token) {
+            // Aqui você pega o token da resposta
+            const token = response.data.usuarioinfo.token;
+            localStorage.setItem('usuarioID',response.data.usuarioinfo.id);
             // Salva o token no localStorage ou faz qualquer outra coisa que você queira
             localStorage.setItem('accesso', token);
 
@@ -64,3 +65,15 @@ export async function registerUser(email, password,nome) {
         });
 }
 
+
+
+const baseUrl = 'https://vidaembits-001-site1.ftempurl.com/api/Usuarios';
+
+export const getUsuarioById = async (usuarioID) => {
+    try {
+        const response = await axios.get(`${baseUrl}?usuarioID=${usuarioID}`);
+        return response.data;
+    } catch (error) {
+        throw error;
+    }
+};

@@ -40,6 +40,12 @@ namespace Blog_WebApi_Dev.Controllers
             return null; 
         }
 
+        [HttpGet("Categoria")]
+        public IEnumerable<Categoria> GetCategorias()
+        {
+            return _context.Categoria.ToList();
+        }
+
 
     }
 }

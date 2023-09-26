@@ -3,7 +3,6 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 
 function ProtectedRoute({ children }) {
-    console.log(localStorage.getItem('accesso'));
     const isLoggedIn = !!localStorage.getItem('accesso'); // Use sua própria lógica de autenticação aqui
     const location = useLocation();
 

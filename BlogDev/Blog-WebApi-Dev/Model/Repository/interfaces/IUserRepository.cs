@@ -7,5 +7,6 @@ namespace Blog_WebApi_Dev.Model.Repository.interfaces
         public Usuario SaveUser(Usuario user);
         public bool VerificarSeExiste(string? email);
         public Usuario GetUserByEmail(string? email);
+        public Usuario getUsuarioByID(int id);
     }
 }

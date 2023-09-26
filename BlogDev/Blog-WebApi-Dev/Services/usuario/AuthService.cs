@@ -44,5 +44,6 @@ namespace Blog_WebApi_Dev.Services.usuario
             user.Senha = _passwordService.HashPassword(password);
             return _userRepository.SaveUser(user);
         }
+
     }
 }

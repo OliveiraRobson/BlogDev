@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
 .article-editor-container {
     width: 100%;
     max-width: 800px;
@@ -6,6 +8,37 @@
     border: 1px solid #e0e0e0;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+}
+
+.article-editor-container label {
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.article-editor-container .user-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.article-editor-container .user-info input,
+.article-editor-container .user-info select {
+    flex: 0 0 calc(33.333% - 10px);
+    padding: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 14px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.article-editor-container .user-info input:focus,
+.article-editor-container .user-info select:focus {
+    border-color: #007BFF;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
 }
 
 .article-editor-container button {
@@ -17,21 +50,37 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, box-shadow 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .article-editor-container button:hover {
     background-color: #0056b3;
 }
 
+.article-editor-container button:active {
+    background-color: #00408f;
+    box-shadow: none;
+}
+
 @media (max-width: 850px) {
     .article-editor-container {
         padding: 15px;
+    }
+    
+    .article-editor-container .user-info input,
+    .article-editor-container .user-info select {
+        flex: 0 0 calc(50% - 10px); /* Agora 2 elementos por linha */
     }
 }
 
 @media (max-width: 600px) {
     .article-editor-container {
         padding: 10px;
+    }
+    
+    .article-editor-container .user-info input,
+    .article-editor-container .user-info select {
+        flex: 0 0 100%; /* Agora 1 elemento por linha */
     }
 }

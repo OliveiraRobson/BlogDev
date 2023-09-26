@@ -9,7 +9,7 @@ namespace Blog_WebApi_Dev.Model
         {
         }
         public DbSet<Usuario> Usuario { get; set; }
-        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Categoria> Categoria { get; set; }
         public DbSet<Post> Post { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<PostTag> PostTags { get; set; }

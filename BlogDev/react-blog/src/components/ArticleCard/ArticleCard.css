@@ -76,5 +76,10 @@
 @media (max-width: 768px) {
   .artigo-card {
     width: 100%; /* Ocupa a largura total em dispositivos móveis */
+    margin-top: 24px;
   }
+  .artigos-list {
+    display: inline-block;
+    
+}
 }

@@ -7,6 +7,7 @@ function Header() {
     const navigate = useNavigate();
 
     const handleLogout = () => {
+        localStorage.removeItem('usuarioID'); 
         localStorage.removeItem('accesso'); // Remove o token de autenticação
         navigate('/login'); // Redireciona o usuário para a página de login
     };

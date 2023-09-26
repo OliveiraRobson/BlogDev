@@ -54,9 +54,15 @@ namespace Blog_WebApi_Dev.Controllers
             // Aqui você também geraria um token JWT para enviar ao cliente.
             var token = _generateJwtToken.GenerateJwtTokens(user);
 
-            return Ok(new { token = token });
-        }
+            var usuarioinfo = new UserResponseDTO();
+            usuarioinfo.Id = user.UsuarioID;
+            usuarioinfo.Email = user.Email;
+            usuarioinfo.Name = user.Nome;
+            usuarioinfo.token = token;
 
+            return Ok(new { usuarioinfo });
+        }
+      
         [HttpPost("register")]
         public ActionResult Register([FromBody] UserDTO userDto)
         {

@@ -24,5 +24,6 @@ namespace Blog_WebApi_Dev.Model.DTOs
         public string Name { get; set; }
         public string Email { get; set; }
         public DateTime CreatedAt { get; set; }
+        public string token { get; set; }
     }
 }

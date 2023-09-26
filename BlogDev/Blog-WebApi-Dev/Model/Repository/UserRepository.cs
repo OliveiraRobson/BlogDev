@@ -17,7 +17,16 @@ namespace Blog_WebApi_Dev.Model.Repository
             _context.SaveChanges();
             return user;
         }
+        public Usuario getUsuarioByID(int id)
+        {
+            var usuario = _context.Usuario.Find(id);
+            if (usuario != null)
+            {
+                return usuario;
+            }
+            return null;
 
+        }
         public bool VerificarSeExiste(string? email)
         {
             var emailExists = _context.Usuario.Any(u => u.Email == email);

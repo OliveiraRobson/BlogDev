@@ -34,6 +34,7 @@ builder.Services.AddTransient<IPasswordService, PasswordService>();
 builder.Services.AddTransient<IGenerateJwtToken, GenerateJwtToken>();
 builder.Services.AddTransient<IUserService, UserService>();
 builder.Services.AddTransient<IAuthService, AuthService>();
+builder.Services.AddTransient<IInfoUsuario, InfoUsuario>();
 builder.Services.AddTransient<IPostService, PostService>();
 
 
@@ -59,28 +60,49 @@ var key = Encoding.ASCII.GetBytes("sua-chave-secreta-aqui"); // Mantenha esta ch
     });
 
 
-
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowLocalhost3000",
+    options.AddPolicy("Localhost",
  builder =>
  {
-     builder.WithOrigins("https://vidaembits.com.br")
+     builder.WithOrigins("http://localhost:3000")
             .AllowAnyMethod()
             .AllowAnyHeader();
  });
 
 });
-var app = builder.Build();
-app.UseCors("AllowLocalhost3000");
-//app.UseCors("AllowLocalhost3000");
 
-// Configure the HTTP request pipeline.
+
+var app = builder.Build();
+
 if (app.Environment.IsDevelopment())
 {
+   
+
+    app.UseCors("Localhost");
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+else
+{
+    //builder.Services.AddCors(options =>
+    //{
+    //    options.AddPolicy("AllowLocalhost3000",
+    // builder =>
+    // {
+    //     builder.WithOrigins("https://vidaembits.com.br")
+    //            .AllowAnyMethod()
+    //            .AllowAnyHeader();
+    // });
+
+    //});
+    //app.UseCors("AllowLocalhost3000");
+
+}
+//app.UseCors("AllowLocalhost3000");
+
+// Configure the HTTP request pipeline.
+
 app.UseRouting();
 
 
