@@ -1,8 +1,9 @@
 // src/utils/shareFunctions.js
 
-export function handleFacebookShare() {
+export function handleFacebookShare(title) {
     const urlToShare = window.location.href;
-    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlToShare)}`, 'popup', 'width=600,height=400');
+    const textToShare = `Confira este incrível artigo: ${title}`;
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(urlToShare)}&quote=${encodeURIComponent(textToShare)}`, 'popup', 'width=600,height=400');
 }
 
 export function handleTwitterShare() {
