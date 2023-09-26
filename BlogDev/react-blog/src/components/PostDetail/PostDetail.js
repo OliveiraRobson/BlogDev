@@ -56,7 +56,7 @@ function PostDetail() {
 
           </div>
           <div className="share-buttons">
-            <button className="share-button facebook" onClick={handleFacebookShare(article.titulo)}>
+            <button className="share-button facebook" onClick={handleFacebookShare}>
               <i className="icon-facebook"></i> Facebook
             </button>
             <button className="share-button twitter" onClick={handleTwitterShare}>
