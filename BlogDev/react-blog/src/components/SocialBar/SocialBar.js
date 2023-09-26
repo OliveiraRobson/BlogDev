@@ -1,8 +1,8 @@
 import React from 'react';
 import './SocialBar.css';
 import { ReactComponent as FacebookIcon } from '../../assets/icons/facebook-icon.svg';
-import { ReactComponent as YoutubeIcon } from '../../assets/icons/instagram-icon.svg';
-import { ReactComponent as InstagramIcon }  from '../../assets/icons/youtube-icon.svg';
+import { ReactComponent as InstagramIcon } from '../../assets/icons/instagram-icon.svg';
+import { ReactComponent as YoutubeIcon }  from '../../assets/icons/youtube-icon.svg';
 
 
 
