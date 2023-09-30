@@ -66,6 +66,7 @@ namespace Blog_WebApi_Dev.Model
         public DateTime DataPublicacao { get; set; }
 
         public int UsuarioID { get; set; }
+        public string? urlImg { get; set; }
         public Usuario Usuario { get; set; }
 
         public int CategoriaID { get; set; }

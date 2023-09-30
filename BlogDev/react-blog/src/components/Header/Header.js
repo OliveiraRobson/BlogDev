@@ -18,8 +18,6 @@ function Header() {
                 <nav className="site-navigation">
                     <ul className={menuOpen ? 'menu' : 'menu hidden'}>
                         <li><Link to="/" >Início</Link></li>
-                        <li><Link to="/article" href="/Artigos">article</Link></li>
-                        <li><Link to="/login" href="/login">login</Link></li>
                         <li><Link to="/articleEdicao" href="/articleEdicao">article Edicao</Link></li>
                         <li><Link to="/login" onClick={handleLogout} className="logout-btn">Logout</Link></li>
                     </ul>

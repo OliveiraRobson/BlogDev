@@ -7,5 +7,6 @@
         public DateTime DataPublicacao { get; set;}
         public int UsuarioID { get; set;}
         public int CategoriaID {  get; set;}
+        public string urlImg { get; set;}
     }
 }
