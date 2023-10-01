@@ -19,14 +19,14 @@ function ArticleEditor() {
         toolbar: [
             [{ 'header': '1' }, { 'font': [] }],
             [{ 'size': ['small', false, 'large', 'huge'] }],
-            ['bold', 'italic', 'underline', 'strike'],
+            ['bold', 'italic', 'underline', 'strike', 'code'], // Adicione 'code' aqui
             [{ 'color': [] }, { 'background': [] }],
             [{ 'list': 'ordered' }, { 'list': 'bullet' }],
             ['link', 'image', 'video', 'blockquote'],
             [{ 'align': [] }],
             [{ 'table': [] }]
         ],
-    };
+    }
 
     const [, setError] = useState(null);
     const usuarioID = localStorage.getItem("usuarioID"); // Por exemplo
