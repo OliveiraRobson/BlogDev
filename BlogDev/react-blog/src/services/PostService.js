@@ -31,18 +31,16 @@ export const getCategoria = async () => {
 };
 export const saveArticle = async (articleData) => {
   try {
-    const response = await fetch(`${API_ENDPOINT}/Posts`, {
-      method: 'POST',
+    const response = await axios.post(`${API_ENDPOINT}/Posts/criarPost`, articleData, {
       headers: {
         'Content-Type': 'application/json',
         // Se você tiver autenticação, adicione o cabeçalho aqui, por exemplo:
         // 'Authorization': `Bearer ${token}`
-      },
-      body: JSON.stringify(articleData)
+      }
     });
 
-    if (response.ok) {
-      return await response.json();
+    if (response.status === 200) {
+      return response.data;
     } else {
       throw new Error('Erro ao salvar o artigo: ' + response.statusText);
     }
@@ -51,6 +49,8 @@ export const saveArticle = async (articleData) => {
     throw error;
   }
 };
+
+
 
 export async function getArticleById(id) {
   try {

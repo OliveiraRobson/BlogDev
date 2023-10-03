@@ -13,7 +13,7 @@ function ArticleEditor() {
     const [categories, setCategories] = useState([]);
     const [title, setTitle] = useState('');
     const [usuario, setUsuario] = useState({ id: null, nome: "" });
-
+    const [errorMessage, setErrorMessage] = useState(null);
 
     const modules = {
         toolbar: [
@@ -63,13 +63,14 @@ function ArticleEditor() {
                 categoriaID: selectedCategory,
                 conteudo: content,
                 titulo: title,
+                urlImg: "",
                 dataPublicacao: new Date().toISOString().split('T')[0]
             };
-            console.log(articleData);
+   
             const result = await saveArticle(articleData);
-            console.log(result);
         } catch (error) {
             console.error("Houve um erro ao salvar:", error);
+            setErrorMessage("Houve um erro ao salvar o artigo. Por favor, tente novamente.");
         }
     };
     const handleChange = (value) => {
@@ -81,6 +82,7 @@ function ArticleEditor() {
 
     return (
         <div className="article-editor-container">
+             {errorMessage && <div style={{ color: 'red', marginTop: '20px' }}>{errorMessage}</div>}
             <div className="user-details">
                 <div className="user-info">
                     <label>Usuário:</label>

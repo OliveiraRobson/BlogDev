@@ -40,7 +40,7 @@ namespace Blog_WebApi_Dev.Controllers
             return post;
         }
         //[Authorize]
-        [HttpPost]
+        [HttpPost("criarPost")]
         public ActionResult CriarPost([FromBody] PostDTO post)
         {
             if(post.UsuarioID > 0)
