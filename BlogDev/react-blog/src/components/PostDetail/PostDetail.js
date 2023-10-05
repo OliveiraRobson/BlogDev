@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getArticleById } from '../../services/PostService'; // Função fictícia para buscar artigo por ID.
 import {handleFacebookShare,handleTwitterShare,copyLinkToClipboard} from '../../utils/shareFunctions'
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 function PostDetail() {
   const [article, setArticle] = useState(null);
   const { id } = useParams(); // Obtem o ID do artigo a partir da URL.
@@ -28,7 +29,7 @@ function PostDetail() {
     return <div className="error-message">{error}</div>;
   }
   if (!article) {
-    return <div>Carregando...</div>;
+    return <LoadingSpinner></LoadingSpinner>;
   }
  
   return (
