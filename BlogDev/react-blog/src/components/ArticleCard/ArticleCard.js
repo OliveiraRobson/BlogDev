@@ -53,7 +53,7 @@ function ArticleCard() {
                                 </Link>
                                 <p className="artigo-date">
                                     <i className="icon-calendar"></i>
-                                    {post.dataPublicacao.toISOString().split('T')[0]}
+                                    {post.dataPublicacao}
                                 </p>
                             </div>
                         </div>
