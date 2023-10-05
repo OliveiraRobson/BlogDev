@@ -8,16 +8,17 @@ import DefaultLayout from './pages/DefaultLayout';
 import SigupPage from './pages/SigupPage/SigupPage';
 import ArtigosEdicao from './pages/ArtigosEdicao/ArtigosEdicao';
 import Home from './pages/Home/Home';
-import SocialBar from './components/SocialBar/SocialBar';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ProtectedRoute from './routes/ProtectedRoute';
 import PostDetail from './components/PostDetail/PostDetail';
+
 
 function App() {
   return (
 
     <div className="App">
       {/* <Login /> */}
+
       <Router>
         <Routes>
           <Route path="/login" element={<LoginPage />} />

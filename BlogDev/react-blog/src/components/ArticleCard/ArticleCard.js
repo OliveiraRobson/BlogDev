@@ -3,6 +3,7 @@ import './ArticleCard.css';
 import Pagination from '../Pagination/Pagination';
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 function ArticleCard() {
     const [posts, setPosts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
@@ -30,7 +31,7 @@ function ArticleCard() {
 
 
     if (loading) {
-        return <div>Carregando...</div>;
+        return <LoadingSpinner></LoadingSpinner>;
     }
 
     return (
@@ -52,7 +53,7 @@ function ArticleCard() {
                                 </Link>
                                 <p className="artigo-date">
                                     <i className="icon-calendar"></i>
-                                    {post.dataPublicacao}
+                                    {post.dataPublicacao.toISOString().split('T')[0]}
                                 </p>
                             </div>
                         </div>
